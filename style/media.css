@@ -1,0 +1,201 @@
+@media only screen and (max-width:1300px){ 
+  
+}
+    
+    @media only screen and (max-width:1200px){ 
+      
+    }
+  
+  @media only screen and (max-width:992px){
+    nav{
+      display: none;
+    }
+    .menuBtn{
+      display: flex;
+    }
+    
+     nav.popUp{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      margin-top: 100%;
+      margin-left: 30%;
+      height: 100vh;
+      width: 75%;
+      animation-duration: 0.55s;  /* Время работы анимации */
+      animation-fill-mode: both;  /* Поведение анимации */
+      animation-name: fadeInDown;/* Имя анимации */
+    } 
+    nav ul{
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    nav ul a{
+      display: flex;
+      padding-top: 20px;
+    }
+    nav a{
+      display: none;
+    }
+    header button{
+        margin-right: 30%;
+    }
+    .header-nav__link{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-top: 40%;
+    }
+    .header-nav__link a{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      padding-top: 15px;
+    }
+    .header-nav__link a img{
+      margin-right: 5px;
+    }
+    @keyframes fadeInDown { /* Сама анимация */
+      0% {                /* Старт анимации */
+          opacity: 0;
+          transform: translate3d(100%, 0px, 0px);
+      }
+      100% {              /* в финале анимации - финал это заданная 0.55s */
+          opacity: 1;
+          transform: none;
+      }
+    }
+    
+  
+  }
+  @media only screen and (max-width:768px){ /*-------ГОТОВО-------*/
+    .menuBtn{
+      margin-right: 50px;
+    }
+    .form-submit{
+      text-align: center;
+    }
+  }
+  @media only screen and (max-width:570px){
+    .menuBtn{
+      margin-left: 70%;
+    }
+    body{
+      background-position: -0%;
+    }
+    .logo img{
+      width: 50px;
+      height: 50px; 
+    }
+    header{
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    header button {
+      height: 40px;
+    }
+    main .table-content{
+      width: 100%;
+      padding-left: 10px;
+      padding-top: 90px;
+    }
+    main .dev-site{
+      flex-direction: column-reverse;
+      margin-top: 100px;
+    }
+    main .dev-site img{
+      padding-left: 50px;
+    }
+    main .dev-site .dev-site-block .dev-site-block__anim h2{
+      font-size: 30px;
+      margin-left: -15%;
+    }
+    main .dev-site .dev-site-block .dev-site-block__anim{
+      margin-left: -10%;
+    }
+    main .dev-site .dev-site-block .dev-site__border{
+      margin-left: 20px;
+      margin-top: 70px;
+    }
+
+    main .dev-style .dev-style__img{
+      margin-left: 50px;
+    }
+    main .dev-style .dev-style__img a img{
+      margin-left: -20px;
+      margin-top: -20px;
+    }
+    
+    main .dev-style .dev-style-block h2{
+      font-size: 30px;
+      margin-left: 30px;
+    }
+    main .dev-style .dev-style-block{
+      margin-top: 0px;
+      margin-right: 0px;
+    }
+    main .dev-style .dev-style-block .dev-style__border{
+      margin-bottom: 5px;
+      margin-left: 300px;
+    }
+    main .dev-advert{
+      flex-direction: column-reverse;
+      
+    }
+    main .dev-advert .dev-advert__img a .pena {
+      width: 50%;
+      height: 350px;
+    }
+    main .dev-advert .dev-advert-block{
+      margin-left: 0px;
+    }
+    main .dev-advert .dev-advert-block h2{
+      font-size: 30px;
+      margin-top: 150px;
+      margin-left: 60px;
+    }
+    main .dev-advert .dev-advert-block .dev-advert__border{
+      margin-bottom: 5px;
+      margin-left: 70px;
+    }
+    main .dev-advert .dev-advert__img{
+      width: 100%;
+    }
+    main .dev-advert .dev-advert__img a img{
+      margin-top: 50px;
+      margin-left: 50px;
+    }
+    main .map {
+      margin-top: 100px;
+    }
+    footer .footer-block__link{
+      display: none;
+    }
+    footer{
+      margin-top: 50px;
+    }
+    footer .footer-block button{
+      margin-bottom: 0px;
+    }
+    .btn-up{
+      width: 35px;
+      height: 35px;
+      right: 0px;
+    }
+  }
+  @media only screen and (max-width:400px){
+    
+  }
+  @media only screen and (max-width:320px){
+    
+  }
+  
