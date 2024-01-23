@@ -34,6 +34,7 @@ body{
   
   .menuBtn {
     margin-left: 85%;
+    
     cursor: pointer;
     width: 100px;
     height: 30px;
@@ -44,22 +45,24 @@ body{
   }
   
   .menuBtn span {
-    width: 30px;
-    height: 1px;
+    width: 28px;
+    height: 2px;
     position: absolute;
     top: 50%;
     left: 75%;
     transform: translate(-50%, -50%);
-    background-color: #27AE60;
+    background-color: $yellow;
     transition: all 0.5s;
   }
   
   .menuBtn span:nth-of-type(2) {
-    top: calc(50% - 5px);
+
+    top: calc(20% - 5px);
   }
   
   .menuBtn span:nth-of-type(3) {
-    top: calc(50% + 5px);
+
+    top: calc(80% + 5px);
   }
 
 header{
@@ -73,19 +76,6 @@ header{
   right: 0;
   left: 0;
   background-color: $dark;
-}
-.active{
-    border-bottom: 2px solid $yellow;
-  }
-.logo{
-  margin-top: 5px;
-  margin-left: 20px;
-}
-nav{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   button{
     border-radius: 10px;
     background-color:  $yellow;
@@ -102,6 +92,22 @@ nav{
       background-color: $white;
     }
   }
+}
+.active{
+    border-bottom: 2px solid $yellow;
+  }
+.logo{
+  margin-top: 5px;
+  margin-left: 20px;
+}
+.header-nav__link{
+  display: none;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   ul{
     list-style-type: none;
     display: flex;

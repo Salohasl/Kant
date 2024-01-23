@@ -1,8 +1,17 @@
 @charset "UTF-8";
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: none;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Poiret One", sans-serif;
   margin: 0;
+  scrollbar-color: none none;
 }
 
 html {
@@ -42,8 +51,8 @@ body {
 }
 
 .menuBtn span {
-  width: 28px;
-  height: 2px;
+  width: 34px;
+  height: 3px;
   position: absolute;
   top: 50%;
   left: 75%;
@@ -339,14 +348,13 @@ main .dev-advert .dev-advert-block .dev-advert__border {
   transition: 0.5s;
 }
 main .map {
-  margin-top: 250px;
+  margin-top: 420px;
 }
 main .map h2 {
   text-align: center;
-  padding-top: 50px;
+  margin-bottom: 70px;
 }
 main .map .map-yandex {
-  margin-top: 70px;
   border-radius: 4px solid white;
   border-radius: 40px;
 }
@@ -398,7 +406,6 @@ footer .footer-block__link a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding-bottom: 5px;
 }
 footer .footer-block__link a img {
   margin-right: 10px;
