@@ -14,22 +14,29 @@
 <link rel="shortcut icon" href="">
 <link rel="stylesheet" href="/style/normalize.css">
 <link rel="stylesheet" href="/style/developer.css">
-<link rel="stylesheet" href="/style/price.css">
 <link rel="stylesheet" href="/style/media.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=a42fc44e-54b3-4174-b590-d963f0d087d2" type="text/javascript"></script>
 </head>
 <header>
     <a class="logo" href="/index.html"><img src="/icon/logo.svg"></a>
-    <nav>
-      <button>заполнить бриф</button>
-      <ul>
-        <li><a href="#" >Философия проекта</a></li>
-        <li><a href="/developer.html" class="active">Этапы разработки</a></li>
-      </ul>
-      <a href="tel:+79114933303">+7(911)493-33-03</a>
-    </nav>
+    <div class="navig">
+      <a href="/feedback/index.html"><button>заполнить бриф</button></a>
+      <nav>
+        <ul>
+          <li><a href="/philosophy.html">Философия проекта</a></li>
+          <li><a href="/developer.html" class="active">Этапы разработки</a></li>
+        </ul>
+        <a href="tel:+79114933303">+7(911)493-33-03</a>
+        <div class="header-nav__link">
+          <a href="mailto:kant-39@yandex.ru"><img src="/icon/Vector 38.svg">Kant-39@yandex.ru</a>
+          <a href="tel:+79114933303"><img src="/icon/Vector 37.svg">+7(911)493-33-03</a>
+          <a href="https://t.me/PixelKantStudio" target="_blank"><img src="/icon/Vector 36.svg">@PixelKantStudio</a>
+        </div>
+      </nav>
+    </div>
     
     <div class="menuBtn">
       <span></span>
@@ -39,36 +46,122 @@
 </header>
 
 <body>
-  <div class="btn-up btn-up_hide"></div>
+  <div class="btn-up btn-up_hide"></div> 
   <main>
-      <div class="text">
+    <div class="citata">
         <h2>Помогаем предпринимателям доносить до
          <br> клиентов ценность предложения с помощью
-         <br> правильной структуры презентации и
-         <br> стильному и современному дизайну</h2>
-      </div>
-      <h3>Этапы разработки</h3>
-
-      <div class="wrapper">
-        <div class="one">
-          <h2>ЗАПОЛНЕНИЕ БРИФА</h2>
+        <br>  правильной структуры презентации и
+         <br> стильному и современному дизайну.
+        </h2>
+    </div>
+    <div class="wrapper">
+      <h2>Этапы разработки</h2>
+      <div class="wrapper-display">
+        <div class="left">
+          <div class="left-block">
+            <div class="left-block__text">
+              <img src="/img/one.png" alt="" height="300px">
+              <div class="text">
+                <h2>ЗАПОЛНЕНИЕ БРИФА</h2>
+                <p>Заполнить бриф
+                <br>  можно используя
+                <br>  форму или 
+                <br>  связаться с нами по 
+                <br>  телефону
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+    
+        <div class="rigth">
+          <div class="rigth-block">
+            <div class="rigth-block__text">
+              <img src="/img/two.png" alt="" height="300px">
+              <div class="text">
+                <h2>ДОГОВОР</h2>
+                <p>Заключение
+                 <br> договора на
+                <br>  оказание услуг</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="left">
+          <div class="left-block">
+            <div class="left-block__text">
+              <img src="/img/three.png" alt="" height="300px">
+              <div class="text">
+                <h2>ПРОЦЕСС</h2>
+                <p>Создание первичных
+                <br>  набросков для
+                <br>  подбора дизайн кода
+                <br>  будущего проекта </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rigth">
+          <div class="rigth-block">
+            <div class="rigth-block__text">
+              <img src="/img/fou.png" alt="" height="300px">
+              <div class="text">
+                <h2>СОГЛАСОВАНИЕ</h2>
+                <p>Согласование
+                <br>  итогового дизайн кода
+                <br>  проекта (внесение
+                <br>  необходимых правок) </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="left">
+          <div class="left-block">
+            <div class="left-block__text">
+              <img src="/img/five.png" alt="" height="300px">
+              <div class="text">
+                <h2>ЗАВЕРШЕНИЕ</h2>
+                <p>Создание
+                <br> финального
+                <br>  варианта проекта </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rigth">
+          <div class="rigth-block">
+            <div class="rigth-block__text">
+              <img src="/img/six.png" alt="" height="300px">
+              <div class="text">
+                <h2>СДАЧА ПРОЕКТА</h2>
+                <p>Сдача финального
+                <br>  проекта и передача
+               <br> авторских прав </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+    </div>
   </main>
  
   <footer class="footer">
       <div class="footer-block">
-        <a href="#" target="_blank"><button>реализовать индивидуальный проект</button></a>
-        <div class="footer-block__link">
-          <a href="mailto:kant-39@yandex.ru"><img src="/icon/Vector 38.svg">Kant-39@yandex.ru</a>
-          <a href="tel:+79114933303"><img src="/icon/Vector 37.svg">+7(911)493-33-03</a>
-          <a href="https://t.me/PixelKantStudio" target="_blank"><img src="/icon/Vector 36.svg">@PixelKantStudio</a>
-        </div>
+        <a href="/feedback/index.html" target="_blank"><button>реализовать индивидуальный проект</button></a>
+          <div class="footer-block__link">
+              <a href="mailto:kant-39@yandex.ru"><img src="/icon/Vector 38.svg">Kant-39@yandex.ru</a>
+              <a href="tel:+79114933303"><img src="/icon/Vector 37.svg">+7(911)493-33-03</a>
+              <a href="https://t.me/PixelKantStudio" target="_blank"><img src="/icon/Vector 36.svg">@PixelKantStudio</a>
+          </div>
       </div>
   </footer>
 
-
-<script src="/script/script.js"></script>
 <script src="/script/up.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.js" integrity="sha512-bvxXT2u2PNVKMpHmLR54QQ+qAnhn0dM//5spHP+sjRcnlZSmNMaLkvZXAr8peMHyNlUoDEgNnYIlrUTnr5kNYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>

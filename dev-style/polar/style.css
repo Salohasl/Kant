@@ -5,14 +5,19 @@
   margin: 0;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-image: url(/fon/polar.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #282828;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menuBtn.active span:nth-of-type(1) {
@@ -60,6 +65,7 @@ body {
 }
 
 header {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -67,9 +73,12 @@ header {
   position: fixed;
   z-index: 100;
   top: 0;
-  right: 0;
-  left: 0;
   background-color: #282828;
+}
+header .navig {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 header button {
   border-radius: 10px;
@@ -133,9 +142,8 @@ nav a:hover {
   position: fixed;
   background-color: #FFB400;
   right: 50px;
-  bottom: 0;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  bottom: 10%;
+  border-radius: 20%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -160,20 +168,27 @@ nav a:hover {
 
 @media (hover: hover) and (pointer: fine) {
   .btn-up:hover {
-    background-color: #202020; /* цвет заднего фона при наведении */
+    background-color: #282828; /* цвет заднего фона при наведении */
   }
 }
+.container {
+  background-image: url(/fon/polar.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
 main {
-  margin-top: 120px;
+  margin-top: 10%;
 }
 main h2 {
   color: #282828;
-  font-size: 40px;
+  font-size: calc(30px + 1.171875vw);
   font-weight: 200;
   margin-left: 50px;
 }
 main .polyarn {
-  margin-top: 50px;
+  margin-top: 15%;
 }
 main .polyarn .polyarn-block {
   display: flex;
@@ -187,7 +202,7 @@ main .polyarn .polyarn-block .polyarn-block__text {
 }
 main .polyarn .polyarn-block .polyarn-block__text p {
   font-weight: 200;
-  font-size: 33px;
+  font-size: calc(20px + 1.171875vw);
 }
 main .cleonOn {
   margin-top: -200px;
@@ -206,7 +221,7 @@ main .cleonOn .cleonOn-block .cleonOn-block__text {
 main .cleonOn .cleonOn-block .cleonOn-block__text p {
   font-weight: 200;
   margin-top: 20px;
-  font-size: 33px;
+  font-size: calc(20px + 1.171875vw);
 }
 main .specTech {
   margin-top: -200px;
@@ -224,7 +239,7 @@ main .specTech .specTech-block .specTech-block__text {
 main .specTech .specTech-block .specTech-block__text p {
   font-weight: 200;
   margin-top: 20px;
-  font-size: 33px;
+  font-size: calc(20px + 1.171875vw);
 }
 
 footer {

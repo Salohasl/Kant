@@ -1,4 +1,8 @@
 @charset "UTF-8";
+::-webkit-scrollbar {
+  width: 0;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Poiret One", sans-serif;
@@ -10,9 +14,14 @@ html {
 }
 
 body {
-  background-image: url(/fon/pfilosophy.png);
+  background-color: #282828;
+  background-image: url(/fon/fonDev.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.active {
+  border-bottom: 1px solid #FFB400;
 }
 
 .menuBtn.active span:nth-of-type(1) {
@@ -41,25 +50,26 @@ body {
 }
 
 .menuBtn span {
-  width: 30px;
-  height: 1px;
+  width: 34px;
+  height: 3px;
   position: absolute;
   top: 50%;
   left: 75%;
   transform: translate(-50%, -50%);
-  background-color: #27AE60;
+  background-color: #FFB400;
   transition: all 0.5s;
 }
 
 .menuBtn span:nth-of-type(2) {
-  top: calc(50% - 5px);
+  top: calc(20% - 5px);
 }
 
 .menuBtn span:nth-of-type(3) {
-  top: calc(50% + 5px);
+  top: calc(80% + 5px);
 }
 
 header {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -67,13 +77,32 @@ header {
   position: fixed;
   z-index: 100;
   top: 0;
-  right: 0;
-  left: 0;
   background-color: #282828;
 }
+header .navig {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header button {
+  border-radius: 10px;
+  background-color: #FFB400;
+  color: #282828;
+  border: none;
+  box-shadow: 2px 2px 10px black;
+  width: 176px;
+  height: 52px;
+  font-size: 23px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+header button:hover {
+  transition: 0.5s;
+  background-color: #FFFFFF;
+}
 
-.active {
-  border-bottom: 2px solid #FFB400;
+.header-nav__link {
+  display: none;
 }
 
 .logo {
@@ -86,21 +115,6 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-}
-nav button {
-  background-color: #FFB400;
-  color: #282828;
-  border: none;
-  box-shadow: 2px 2px 10px black;
-  width: 176px;
-  height: 52px;
-  font-size: 23px;
-  transition: 0.5s;
-  cursor: pointer;
-}
-nav button:hover {
-  transition: 0.5s;
-  background-color: #FFFFFF;
 }
 nav ul {
   list-style-type: none;
@@ -128,9 +142,8 @@ nav a:hover {
   position: fixed;
   background-color: #FFB400;
   right: 50px;
-  bottom: 0;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  bottom: 10%;
+  border-radius: 20%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -158,41 +171,92 @@ nav a:hover {
     background-color: #202020; /* цвет заднего фона при наведении */
   }
 }
-main .text {
-  margin-top: 290px;
-  margin-left: 200px;
+main .citata {
+  margin-top: 20%;
+  margin-left: 10%;
 }
-main .text h2 {
-  text-align: left;
+main .citata h2 {
   color: #282828;
-  font-weight: 400;
-  font-size: 25px;
-}
-main h3 {
-  text-align: center;
-  color: #FFFFFF;
-  font-size: 35px;
-  margin-top: 150px;
+  font-size: calc(23px + 1.171875vw);
   font-weight: 200;
 }
 main .wrapper {
+  margin-top: 9%;
+}
+main .wrapper .wrapper-display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+main .wrapper h2 {
+  font-size: calc(20px + 1.171875vw);
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: 200;
+}
+main .left {
+  margin-top: 10%;
+  width: 50%;
+}
+main .left .left-block .left-block__text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+main .left .left-block .left-block__text .text {
+  margin-left: 20px;
+}
+main .left .left-block .left-block__text h2 {
   color: #282828;
-  margin-top: 150px;
+  font-weight: bold;
+  font-size: calc(30px + 0.390625vw);
+}
+main .left .left-block .left-block__text p {
+  margin-top: 20px;
+  color: #282828;
+  font-weight: 200;
+  font-size: calc(20px + 0.390625vw);
+}
+main .rigth {
+  margin-top: 10%;
+  width: 50%;
+}
+main .rigth .rigth-block .rigth-block__text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+main .rigth .rigth-block .rigth-block__text .text {
+  margin-left: 20px;
+  text-align: left;
+}
+main .rigth .rigth-block .rigth-block__text h2 {
+  color: #282828;
+  font-weight: bold;
+  font-size: calc(30px + 0.390625vw);
+}
+main .rigth .rigth-block .rigth-block__text p {
+  margin-top: 20px;
+  color: #282828;
+  font-weight: 200;
+  font-size: calc(20px + 0.390625vw);
 }
 
-footer {
-  margin-top: 100px;
-}
 footer .footer-block {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 50px;
+  padding-bottom: 20px;
 }
 footer .footer-block button {
-  margin-bottom: 20px;
   border: none;
   border-radius: 10px;
   background-color: #FFB400;
@@ -221,6 +285,10 @@ footer .footer-block__link a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-bottom: 15px;
+}
+footer .footer-block__link a:hover {
+  border-bottom: 1px solid #FFB400;
 }
 footer .footer-block__link a img {
   margin-right: 10px;

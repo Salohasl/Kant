@@ -3,15 +3,10 @@
   width: 0;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: none;
-}
-
 * {
   box-sizing: border-box;
   font-family: "Poiret One", sans-serif;
   margin: 0;
-  scrollbar-color: none none;
 }
 
 html {
@@ -19,10 +14,7 @@ html {
 }
 
 body {
-  background-image: url(/fon/fohHome.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 10%;
+  background-color: #282828;
 }
 
 .menuBtn.active span:nth-of-type(1) {
@@ -70,6 +62,7 @@ body {
 }
 
 header {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -77,9 +70,12 @@ header {
   position: fixed;
   z-index: 100;
   top: 0;
-  right: 0;
-  left: 0;
   background-color: #282828;
+}
+header .navig {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 header button {
   border-radius: 10px;
@@ -139,9 +135,8 @@ nav a:hover {
   position: fixed;
   background-color: #FFB400;
   right: 50px;
-  bottom: 0;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  bottom: 10%;
+  border-radius: 20%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -169,25 +164,38 @@ nav a:hover {
     background-color: #202020; /* цвет заднего фона при наведении */
   }
 }
+.container {
+  background-image: url(/fon/fonHome.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 main {
-  margin-top: 150px;
   color: #FFFFFF;
 }
 main h2 {
   font-size: 45px;
   font-weight: 200;
 }
+main .table {
+  background-image: url(/fon/fonHome-header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+}
 main .table-content {
-  width: 580px;
-  height: 500px;
-  padding-left: 130px;
-  padding-top: 90px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 10%;
 }
 main .table-content .table-content__block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
+  width: 800px;
+  height: 500px;
+  background-color: #282828;
+  padding-left: 10%;
 }
 main .table-content p {
   font-size: 25px;
@@ -200,20 +208,20 @@ main .dev-site {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  margin-top: 90px;
 }
 main .dev-site a {
   text-decoration: none;
   color: #FFFFFF;
 }
 main .dev-site .dev-site-block {
-  margin-left: 100px;
+  margin-right: 200px;
 }
 main .dev-site .dev-site-block .dev-site-block__anim {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  position: absolute;
 }
 main .dev-site .dev-site-block .dev-site-block__anim:hover {
   border-bottom: 3px solid #FFB400;
@@ -240,9 +248,43 @@ main .dev-site img {
 main .dev-style {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
-  margin-top: 110px;
+  padding-top: 200px;
+}
+main .dev-style a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+main .dev-style .dev-style-block {
+  margin-left: -80px;
+  margin-right: 500px;
+}
+main .dev-style .dev-style-block .dev-style-block__anim {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: absolute;
+}
+main .dev-style .dev-style-block .dev-style-block__anim:hover {
+  border-bottom: 3px solid #FFB400;
+}
+main .dev-style .dev-style-block .dev-style-block__anim:hover .dev-style__border {
+  margin-left: 430px;
+}
+main .dev-style .dev-style-block .dev-style__border {
+  position: absolute;
+  margin-top: 65px;
+  margin-left: 400px;
+  border-bottom: 4px solid #FFFFFF;
+  border-right: 4px solid #FFFFFF;
+  height: 20px;
+  width: 20px;
+  transform: rotate(-45deg);
+  cursor: pointer;
+  transition: 0.5s;
 }
 main .dev-style .dev-style__img {
   display: flex;
@@ -251,7 +293,6 @@ main .dev-style .dev-style__img {
   align-items: center;
   justify-content: center;
   width: 600px;
-  margin-left: 40px;
 }
 main .dev-style .dev-style__img a img {
   margin-left: -30px;
@@ -259,28 +300,39 @@ main .dev-style .dev-style__img a img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-main .dev-style a {
+main .dev-advert {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 100px;
+}
+main .dev-advert a {
   text-decoration: none;
   color: #FFFFFF;
 }
-main .dev-style .dev-style-block {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: center;
-  margin-top: 50px;
-  margin-right: 220px;
+main .dev-advert .dev-advert-block {
+  margin-right: 200px;
+  margin-left: 100px;
 }
-main .dev-style .dev-style-block:hover {
+main .dev-advert .dev-advert-block .dev-advert-block__anim {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: absolute;
+}
+main .dev-advert .dev-advert-block .dev-advert-block__anim:hover {
   border-bottom: 3px solid #FFB400;
 }
-main .dev-style .dev-style-block:hover .dev-style__border {
-  margin-left: 400px;
+main .dev-advert .dev-advert-block .dev-advert-block__anim:hover .dev-advert__border {
+  margin-left: 70px;
 }
-main .dev-style .dev-style-block .dev-style__border {
+main .dev-advert .dev-advert-block .dev-advert__border {
   position: absolute;
-  margin-bottom: 10px;
-  margin-left: 380px;
+  margin-top: 60px;
+  margin-left: 50px;
   border-bottom: 4px solid #FFFFFF;
   border-right: 4px solid #FFFFFF;
   height: 20px;
@@ -289,20 +341,13 @@ main .dev-style .dev-style-block .dev-style__border {
   cursor: pointer;
   transition: 0.5s;
 }
-main .dev-advert {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 50px;
-}
 main .dev-advert .dev-advert__img {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 600px;
+  margin-left: 300px;
 }
 main .dev-advert .dev-advert__img a img {
   -o-object-fit: cover;
@@ -311,48 +356,19 @@ main .dev-advert .dev-advert__img a img {
   border-radius: 15px;
 }
 main .dev-advert .dev-advert__img a .pena {
-  margin-top: 200px;
-  margin-left: -100px;
-  z-index: -1;
-  position: absolute;
+  margin-top: -200px;
+  margin-left: 150px;
+  z-index: -100;
   width: 300px;
   height: 450px;
 }
-main .dev-advert a {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-main .dev-advert .dev-advert-block {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: center;
-  margin-top: 50px;
-  margin-left: 100px;
-}
-main .dev-advert .dev-advert-block:hover {
-  border-bottom: 3px solid #FFB400;
-}
-main .dev-advert .dev-advert-block:hover .dev-advert__border {
-  margin-left: 20px;
-}
-main .dev-advert .dev-advert-block .dev-advert__border {
-  position: absolute;
-  margin-bottom: 10px;
-  border-bottom: 4px solid #FFFFFF;
-  border-right: 4px solid #FFFFFF;
-  height: 20px;
-  width: 20px;
-  transform: rotate(-45deg);
-  cursor: pointer;
-  transition: 0.5s;
-}
 main .map {
-  margin-top: 420px;
+  margin-top: 100px;
 }
 main .map h2 {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
+  margin-top: -10px;
 }
 main .map .map-yandex {
   border-radius: 4px solid white;
@@ -365,19 +381,15 @@ main .map .map-yandex {
   border: 2px solid #FFFFFF;
 }
 
-footer {
-  margin-top: 100px;
-}
 footer .footer-block {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 50px;
+  padding-bottom: 20px;
 }
 footer .footer-block button {
-  margin-bottom: 20px;
   border: none;
   border-radius: 10px;
   background-color: #FFB400;
@@ -406,10 +418,11 @@ footer .footer-block__link a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-bottom: 15px;
+}
+footer .footer-block__link a:hover {
+  border-bottom: 1px solid #FFB400;
 }
 footer .footer-block__link a img {
   margin-right: 10px;
-}
-footer .footer-block__link a:hover {
-  border-bottom: 2px solid #FFB400;
 }/*# sourceMappingURL=style.css.map */

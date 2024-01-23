@@ -3,7 +3,9 @@
     font-family: 'Poiret One', sans-serif;
     margin: 0;
 }
-
+::-webkit-scrollbar {
+  width: 0;
+}
 $yellow: #FFB400;
 $dark: #282828;
 $white: #FFFFFF;
@@ -13,9 +15,10 @@ html {
 }
 
 body{
-  background-image: url(/fon/polar.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: $dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menuBtn.active span:nth-of-type(1) {
@@ -66,6 +69,7 @@ body{
   }
 
 header{
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -73,9 +77,12 @@ header{
   position: fixed;
   z-index: 100;
   top: 0;
-  right: 0;
-  left: 0;
   background-color: $dark;
+  .navig{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   button{
     border-radius: 10px;
     background-color:  $yellow;
@@ -136,9 +143,8 @@ nav{
     position: fixed;
     background-color: $yellow ;
     right: 50px;
-    bottom: 0;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    bottom: 10%;
+    border-radius: 20%;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -161,22 +167,27 @@ nav{
   
   @media (hover: hover) and (pointer: fine) {
     .btn-up:hover {
-      background-color: #202020; /* цвет заднего фона при наведении */
+      background-color: $dark; /* цвет заднего фона при наведении */
     }
   }
   //Конец стиля кнопки всплытия SVG
 
-
+  .container{
+    background-image: url(/fon/polar.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
 main{
-    margin-top: 120px;
+    margin-top: 10%;
     h2{
         color: $dark;
-        font-size: 40px;
+        font-size: calc(30px + 15 * (100vw / 1280));
         font-weight: 200;
         margin-left: 50px;
     }
     .polyarn{
-        margin-top: 50px;
+        margin-top: 15%;
         .polyarn-block{
             display: flex;
             flex-direction: row;
@@ -187,7 +198,7 @@ main{
                 color: $white;
                 p{
                     font-weight: 200;
-                    font-size: 33px;
+                    font-size: calc(20px + 15 * (100vw / 1280));
                 }
             }
         }
@@ -207,7 +218,7 @@ main{
                 p{
                     font-weight: 200;
                     margin-top: 20px;
-                    font-size: 33px;
+                    font-size: calc(20px + 15 * (100vw / 1280));
                 }
             }
         }
@@ -226,7 +237,7 @@ main{
                 p{
                     font-weight: 200;
                     margin-top: 20px;
-                    font-size: 33px;
+                    font-size: calc(20px + 15 * (100vw / 1280));
                 }
             }
         }

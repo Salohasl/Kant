@@ -3,7 +3,9 @@
     font-family: 'Poiret One', sans-serif;
     margin: 0;
 }
-
+::-webkit-scrollbar {
+  width: 0;
+}
 $yellow: #FFB400;
 $dark: #282828;
 $white: #FFFFFF;
@@ -13,9 +15,10 @@ html {
 }
 
 body{
-  background-image: url(/fon/fonProm.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: $dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menuBtn.active span:nth-of-type(1) {
@@ -74,9 +77,13 @@ header{
   position: fixed;
   z-index: 100;
   top: 0;
-  right: 0;
-  left: 0;
+  width: 100%;
   background-color: $dark;
+  .navig{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   button{
     border-radius: 10px;
     background-color:  $yellow;
@@ -137,9 +144,8 @@ nav{
     position: fixed;
     background-color: $yellow ;
     right: 50px;
-    bottom: 0;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    bottom: 10%;
+    border-radius: 20%;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -162,22 +168,28 @@ nav{
   
   @media (hover: hover) and (pointer: fine) {
     .btn-up:hover {
-      background-color: #202020; /* цвет заднего фона при наведении */
+      background-color: $dark; /* цвет заднего фона при наведении */
     }
   }
   //Конец стиля кнопки всплытия SVG
 
-
+  .container{
+    background-image: url(/fon/fonProm.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
 main{
-    margin-top: 120px;
+    margin-top: 10%;
     h2{
         color: $dark;
-        font-size: 40px;
+        font-size: calc(30px + 15 * (100vw / 1280));
         font-weight: 200;
         margin-left: 50px;
     }
     .row{
-        margin-top: 200px;
+        margin-top: 5%;
+        
         .row-block{
             display: flex;
             flex-direction: row-reverse;
@@ -187,6 +199,7 @@ main{
             img{
                 cursor: pointer;
                 transition: 1s;
+                margin-top: 10%;
                 &:hover{
                     transform: scale(1.3);
                     margin: 20px;
@@ -194,16 +207,16 @@ main{
               }
             .row-block__text{
                 color: $white;
-                margin-top: -100px;
+                
                 h2{
                   margin-left: 0px;
                     color: $white;
-                    font-size: 45px;
+                    font-size: calc(30px + 45 * (100vw / 1280));
                 }
                 p{
                     font-weight: 200;
                     margin-top: 35px;
-                    font-size: 33px;
+                    font-size: calc(20px + 15 * (100vw / 1280));
                 }
             }
         }
@@ -230,12 +243,12 @@ main{
                 h2{
                     margin-left: 0px;
                     color: $white;
-                    font-size: 45px;
+                    font-size: calc(30px + 45 * (100vw / 1280));
                 }
                 p{
                     font-weight: 200;
                     margin-top: 40px;
-                    font-size: 33px;
+                    font-size: calc(20px + 15 * (100vw / 1280));
                 }
             }
         }
@@ -263,6 +276,7 @@ main{
         border-radius: 10px;
         background-color: $yellow;
         color: $dark;
+        margin-top: 20px;
         padding: 20px;
         font-size: 23px;
         box-shadow: 2px 2px 15px black;
@@ -315,12 +329,12 @@ main{
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        padding-bottom: 5px;
         img{
           margin-right: 10px;
         }
+        margin-bottom: 15px;
         &:hover{
-            border-bottom: 2px solid $yellow;
+          border-bottom: 1px solid $yellow;
         }
       }
     }

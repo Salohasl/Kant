@@ -1,0 +1,287 @@
+::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  *{
+      box-sizing: border-box;
+      font-family: 'Poiret One', sans-serif;
+      margin: 0;
+  }
+  
+  $yellow: #FFB400;
+  $dark: #282828;
+  $white: #FFFFFF;
+  
+  html {
+      scroll-behavior: smooth;
+  }
+  
+  body{
+    background-color: $dark;
+    background-image: url(/fon/fon-phil.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+  .active{
+    border-bottom: 1px solid $yellow;
+  }
+  .menuBtn.active span:nth-of-type(1) {
+      display: none;
+    }
+    
+    .menuBtn.active span:nth-of-type(2) {
+      top: 50%;
+      transform: translate(-50%, 0%) rotate(45deg);
+    }
+    
+    .menuBtn.active span:nth-of-type(3) {
+      top: 50%;
+      transform: translate(-50%, 0%) rotate(-45deg);
+    }
+    
+    .menuBtn {
+      margin-left: 85%;
+      
+      cursor: pointer;
+      width: 100px;
+      height: 30px;
+      position: fixed;
+      z-index: 3;
+      overflow: hidden;
+      display: none;
+    }
+    
+    .menuBtn span {
+      width: 34px;
+      height: 3px;
+      position: absolute;
+      top: 50%;
+      left: 75%;
+      transform: translate(-50%, -50%);
+      background-color: $yellow;
+      transition: all 0.5s;
+    }
+    
+    .menuBtn span:nth-of-type(2) {
+  
+      top: calc(20% - 5px);
+    }
+    
+    .menuBtn span:nth-of-type(3) {
+  
+      top: calc(80% + 5px);
+    }
+  
+  header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    background-color: $dark;
+    .navig{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    button{
+      border-radius: 10px;
+      background-color:  $yellow;
+      color: $dark;
+      border: none;
+      box-shadow: 2px 2px 10px black;
+      width: 176px;
+      height: 52px;
+      font-size: 23px;
+      transition: .5s;
+      cursor: pointer;
+      &:hover{
+        transition: .5s;
+        background-color: $white;
+      }
+    }
+  }
+  .header-nav__link{
+    display: none;
+  }
+  .logo{
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+  nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    ul{
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a{
+        padding-bottom: 10px;
+      }
+    }
+    a{
+      text-decoration: none;
+      color: $white;
+      margin-right: 40px;
+      font-size: 23px;
+      transition: 1s;
+      padding-bottom: 5px;
+      border-color: $yellow;
+      &:hover{
+        border-bottom: 1px solid $yellow;
+      }
+    }
+  }
+  
+   //Кнопка всплытия SVG
+   .btn-up {
+      position: fixed;
+      background-color: $yellow ;
+      right: 50px;
+      bottom: 10%;
+      border-radius: 20%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 50px;
+      z-index: 5;
+    }
+    .btn-up::before {
+      content: "";
+      width: 40px;
+      height: 40px;
+      background: transparent no-repeat center center;
+      background-size: 100% 100%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3E%3C/svg%3E");
+    }
+    .btn-up_hide {
+      display: none;
+    }
+    
+    @media (hover: hover) and (pointer: fine) {
+      .btn-up:hover {
+        background-color: #202020; /* цвет заднего фона при наведении */
+      }
+    }
+    //Конец стиля кнопки всплытия SVG
+main{
+  .citata{
+    margin-top: 20%;
+    margin-left: 10%;
+    h2{
+      color: $dark;
+      font-size: calc(30px + 15 * (100vw / 1280));
+      font-weight: 200;
+    }
+  }
+  .wrapper{
+    margin-top: 20%;
+  }
+  .left{
+    margin-top: 15px;
+    width: 60%;
+    .left-block{
+      border: 1px solid $white;
+      border-left: none;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+      padding: 10%;
+      .left-block__text{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        p{
+          color: $white;
+          width: 80%;
+          font-weight: 200;
+          font-size: calc(20px + 5 * (100vw / 1280));
+        }
+      }
+    }
+  }
+
+  .rigth{
+    margin-top: 10px;
+    margin-left: 40%;   
+    .rigth-block{
+      border: 1px solid $white;
+      border-right: none;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+      padding: 10%;
+      .rigth-block__text{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        p{
+          color: $white;
+          width: 80%;
+          font-weight: 200;
+          font-size: calc(20px + 5 * (100vw / 1280));
+        }
+      }
+    }
+  }
+}
+  
+  footer{
+  
+    .footer-block{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      padding-bottom: 20px;
+      button{
+  
+        border: none;
+        border-radius: 10px;
+        background-color: $yellow;
+        color: $dark;
+        padding: 15px;
+        font-size: 23px;
+        box-shadow: 2px 2px 15px black;
+        cursor: pointer;
+        transition: 1s;
+        &:hover{
+          background-color: $white;
+        }
+      }
+    }
+    .footer-block__link{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      a{
+        text-decoration: none;
+        color: $white;
+        font-size: 20px;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        &:hover{
+          border-bottom: 1px solid $yellow;
+        }
+        img{
+          margin-right: 10px;
+        }
+      }
+    }
+  }

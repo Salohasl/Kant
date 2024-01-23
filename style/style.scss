@@ -1,14 +1,11 @@
 ::-webkit-scrollbar {
   width: 0;
 }
-::-webkit-scrollbar-thumb{
-  background-color: none;
-}
+
 *{
     box-sizing: border-box;
     font-family: 'Poiret One', sans-serif;
     margin: 0;
-    scrollbar-color: none none;
 }
 
 $yellow: #FFB400;
@@ -20,10 +17,7 @@ html {
 }
 
 body{
-  background-image: url(/fon/fohHome.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 10%;
+  background-color: $dark;
 }
 
 .menuBtn.active span:nth-of-type(1) {
@@ -74,6 +68,7 @@ body{
   }
 
 header{
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -81,9 +76,12 @@ header{
   position: fixed;
   z-index: 100;
   top: 0;
-  right: 0;
-  left: 0;
   background-color: $dark;
+  .navig{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   button{
     border-radius: 10px;
     background-color:  $yellow;
@@ -141,9 +139,8 @@ nav{
     position: fixed;
     background-color: $yellow ;
     right: 50px;
-    bottom: 0;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    bottom: 10%;
+    border-radius: 20%;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -170,24 +167,41 @@ nav{
     }
   }
   //Конец стиля кнопки всплытия SVG
-
+.container{
+  background-image: url(/fon/fonHome.png);
+  background-repeat: no-repeat;
+  background-size:cover;
+}
 main{
-  margin-top: 150px;
   color: $white;
   h2{
     font-size: 45px;
     font-weight: 200;
   }
+  .table{
+    background-image: url(/fon/fonHome-header.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 800px;
+  }
+ 
   .table-content{
-    width: 580px;
-    height: 500px;
-    padding-left: 130px;
-    padding-top: 90px;
+    color: $white;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 10%;
+    img{
+      
+    }
     .table-content__block{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-end;
+      width: 800px;
+      height: 500px;
+      background-color: $dark;
+      
+      
+      padding-left: 10%;
     }
     p{
       font-size: 25px;
@@ -201,18 +215,18 @@ main{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin-top: 90px;
     a{
       text-decoration: none;
       color: $white;
     }
     .dev-site-block{
-      margin-left: 100px;
+      margin-right: 200px;
       .dev-site-block__anim{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: row;
+        position: absolute;
         &:hover{
           border-bottom: 3px solid $yellow;
           .dev-site__border{
@@ -237,12 +251,48 @@ main{
       object-fit: cover;
     }
   }
+
+
   .dev-style{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
-    margin-top: 110px;
+    padding-top: 200px;
+    a{
+      text-decoration: none;
+      color: $white;
+    }
+    .dev-style-block{
+      margin-left: -80px;
+      margin-right: 500px;
+      .dev-style-block__anim{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        position: absolute;
+        &:hover{
+          border-bottom: 3px solid $yellow;
+          .dev-style__border{
+            margin-left: 430px;
+          }
+        }
+      }
+        .dev-style__border{
+          position: absolute;
+          margin-top: 65px;
+          margin-left: 400px;
+          border-bottom: 4px solid $white;
+          border-right: 4px solid $white;
+          height: 20px;
+          width: 20px;
+          transform: rotate(-45deg);
+          cursor: pointer;
+          transition: .5s;
+        }
+    }
     .dev-style__img{
       display: flex;
       flex-direction: row;
@@ -250,7 +300,6 @@ main{
       align-items: center;
       justify-content: center;
       width: 600px;
-      margin-left: 40px;
       a{
         img{
           margin-left: -30px;
@@ -259,27 +308,41 @@ main{
         }
       }
     }
+  }
+
+
+  .dev-advert{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 100px;
+    
     a{
       text-decoration: none;
       color: $white;
     }
-    .dev-style-block{
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-      justify-content: center;
-      margin-top: 50px;
-      margin-right: 220px;
-      &:hover{
-        border-bottom: 3px solid $yellow;
-        .dev-style__border{
-          margin-left: 400px;
+    .dev-advert-block{
+      margin-right: 200px;
+      margin-left: 100px;
+      .dev-advert-block__anim{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        position: absolute;
+        &:hover{
+          border-bottom: 3px solid $yellow;
+          .dev-advert__border{
+            margin-left: 70px;
+          }
         }
       }
-        .dev-style__border{
+        .dev-advert__border{
           position: absolute;
-          margin-bottom: 10px;
-          margin-left: 380px;
+          margin-top: 60px;
+          margin-left: 50px;
           border-bottom: 4px solid $white;
           border-right: 4px solid $white;
           height: 20px;
@@ -289,74 +352,37 @@ main{
           transition: .5s;
         }
     }
-  }
-
-  .dev-advert{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 50px;
     .dev-advert__img{
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
       width: 600px;
-
+      margin-left: 300px;
       a{
         img{
           object-fit: cover;
           border: 3px solid $white;
           border-radius: 15px;
+          
         }
         .pena{
-          margin-top: 200px;
-          margin-left: -100px;
-          z-index: -1;
-          position: absolute;
+          margin-top: -200px;
+          margin-left: 150px;
+          z-index: -100;
           width: 300px;
           height: 450px;
         }
       }
     }
-    a{
-      text-decoration: none;
-      color: $white;
-    }
-    .dev-advert-block{
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-      justify-content: center;
-      margin-top: 50px;
-      margin-left: 100px;
-      &:hover{
-        border-bottom: 3px solid $yellow;
-        .dev-advert__border{
-          margin-left: 20px;
-        }
-      }
-        .dev-advert__border{
-          position: absolute;
-          margin-bottom: 10px;
-          border-bottom: 4px solid $white;
-          border-right: 4px solid $white;
-          height: 20px;
-          width: 20px;
-          transform: rotate(-45deg);
-          cursor: pointer;
-          transition: .5s;
-        }
-    }
   }
 
   .map{
-    margin-top: 420px;
+    margin-top: 100px;
     h2{
       text-align: center;
-      margin-bottom: 70px;
+      margin-bottom: 50px;
+      margin-top: -10px;
     }
     .map-yandex{
 
@@ -372,18 +398,17 @@ main{
   border: 2px solid $white;
   }
 
-
 footer{
-  margin-top: 100px;
+
   .footer-block{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 50px;
+    padding-bottom: 20px;
     button{
-      margin-bottom: 20px;
+
       border: none;
       border-radius: 10px;
       background-color: $yellow;
@@ -399,10 +424,10 @@ footer{
     }
   }
   .footer-block__link{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
     a{
       text-decoration: none;
       color: $white;
@@ -412,11 +437,12 @@ footer{
       flex-direction: row;
       align-items: center;
       justify-content: center;
+      margin-bottom: 15px;
+      &:hover{
+        border-bottom: 1px solid $yellow;
+      }
       img{
         margin-right: 10px;
-      }
-      &:hover{
-        border-bottom: 2px solid $yellow;
       }
     }
   }
