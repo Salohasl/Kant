@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xml:lang="ru" lang="ru" class="">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+<meta name="HandheldFriendly" content="true" >
+<meta name="MobileOptimized" content="width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Краткий бриф</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="shortcut icon" href="">
+<link rel="stylesheet" href="/style/normalize.css">
+<link rel="stylesheet" href="css/form-processing.css">
+<link rel="stylesheet" href="/style/media.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+</head>
+<header>
+    <nav>
+        <a class="logo" href="/index.html"><img src="/icon/logo.svg"></a>
+        <h2>Краткий бриф</h2>
+        <a href="tel:+79114933303">+7(911)493-33-03</a>
+    </nav>
+</header>
+<body>
+
+  <div class="container">
+        
+    <div class="form-container form__wrapper">
+      <!-- Форма обратной связи -->
+      <form id="feedback-form" action="/feedback/form-processing.php" enctype="multipart/form-data" novalidate>
+        <div class="content">
+            <h1>Расскажите кратко о задаче</h1>
+            <div class="form-row">
+            <!-- Имя пользователя -->
+            <div class="form-group">
+                <label for="name" class="control-label">ФИО</label>
+                <input id="name" type="text" name="name" class="form-control style_input" value="" placeholder="Напишите ваше имя" minlength="2"
+                maxlength="30" required="required">
+                <div class="invalid-feedback"></div>
+            </div>
+            
+            </div>
+            <!-- Сообщение пользователя -->
+            <div class="form-group">
+            <label for="message" class="control-label">Сфера деятельности вашей компании</label>
+            <textarea id="message" name="message" class="form-control" rows="3"
+                placeholder="Подробно" minlength="2" maxlength="500"></textarea>
+            <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="message" class="control-label">Какую задачу необходимо решить?</label>
+                <textarea id="message" name="message" class="form-control" rows="3"
+                placeholder="Напишите ответ" minlength="2" maxlength="500"></textarea>
+                <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="message" class="control-label">Дополнительная информация (пожелания)</label>
+                <textarea id="message" name="message" class="form-control" rows="3"
+                placeholder="Напишите ответ" minlength="2" maxlength="500"></textarea>
+                <div class="invalid-feedback"></div>
+            </div>
+            <!-- Телефон -->
+            <div class="form-group">
+                <label for="phone" class="control-label">Телефон</label>
+                <div class="input-group">
+                <input id="phone" type="tel" name="phone" class="form-control style_input" placeholder="Напишите ответ" value="" pattern="^(?[0-9]{3})?(s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$">
+                <div class="invalid-feedback"></div>
+                </div>
+            </div>
+            <!---Кнопки Выборов-->
+            <label>Выберите предпочитаемый мессенджер</label>
+            <div class="btn">
+                <div class="form-group">
+                    <input id="messenger" type="text" name="messenger" class="form-control style_btn" value="WhatSapp" readonly>
+                    
+                </div>
+                <div class="form-group">
+                    <input id="messenger" type="text" name="messenger" class="form-control style_btn" value="Viber" readonly>
+                    
+                </div>
+                <div class="form-group">
+                    <input id="messenger" type="text" name="messenger" class="form-control style_btn" value="Telegram" readonly>
+                    
+                </div>
+            </div>
+
+            <!-- Сообщение об ошибке -->
+            <div class="form-error form-error_hide">Исправьте данные и отправьте форму ещё раз.</div>
+        
+        
+                <div class="btn_user">
+                    <!-- Кнопка для отправки формы на сервер -->
+                    <div class="form-submit">
+                        <button type="submit">Отправить</button>
+                    </div>
+
+                    <!-- Пользовательское солашение -->
+                    <div class="form-group form-agree form-check">
+                        <input class="form-check-input" type="checkbox" name="agree" id="agree" required value="true">
+                        <label class="form-check-label" for="agree">Соглашение на обработку <a href="#">персональных данных</a></label>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>    
+        </div>
+      </form>
+
+      <!-- Сообщение об успешной отправки формы -->
+      <div class="form-success form-success_hide">
+        <div class="form-success__message">Форма успешно отправлена. Нажмите <button type="button"
+            class="form-success__btn">здесь</button>, если нужно отправить ещё одну форму.</div>
+      </div>
+    
+    </div>
+</div>
+
+  <script src="/feedback/js/add.js"></script>
+  <script src="/feedback/js/form-processing.js"></script>
+  <script>
+    /*
+      attachMaxItems: 3,
+      attachMaxFileSize: 128,
+      attachExt: ['png', 'jpg']
+    */
+
+    ItcSubmitForm.getOrCreateInstance('form');
+
+    document.addEventListener('itc.successSendForm', (e) => {
+      const el = e.target.closest('.form-container').querySelector('.form-success');
+      el.classList.remove('form-success_hide');
+    });
+
+    // при клике на .form-success__btn
+    document.querySelector('.form-success__btn').addEventListener('click', (e) => {
+      const el = e.target.closest('.form-container').querySelector('form');
+      const form = ItcSubmitForm.getOrCreateInstance(el);
+      form.reset();
+      e.target.closest('.form-container').querySelector('.form-success').classList.add('form-success_hide');
+    });
+
+  </script>
+
+</body>
+
+</html>

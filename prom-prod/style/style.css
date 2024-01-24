@@ -142,7 +142,7 @@ nav a:hover {
   position: fixed;
   background-color: #FFB400;
   right: 50px;
-  bottom: 10%;
+  bottom: 4%;
   border-radius: 20%;
   cursor: pointer;
   display: flex;
@@ -201,6 +201,7 @@ main .row .row-block img {
   cursor: pointer;
   transition: 1s;
   margin-top: 10%;
+  width: 40%;
 }
 main .row .row-block img:hover {
   transform: scale(1.3);
@@ -212,7 +213,7 @@ main .row .row-block .row-block__text {
 main .row .row-block .row-block__text h2 {
   margin-left: 0px;
   color: #FFFFFF;
-  font-size: calc(30px + 3.515625vw);
+  font-size: calc(30px + 1.953125vw);
 }
 main .row .row-block .row-block__text p {
   font-weight: 200;
@@ -230,6 +231,7 @@ main .row-reverse .row-reverse-block {
   justify-content: space-around;
 }
 main .row-reverse .row-reverse-block img {
+  width: 30%;
   cursor: pointer;
   transition: 1s;
 }
@@ -243,7 +245,7 @@ main .row-reverse .row-reverse-block .row-reverse-block__text {
 main .row-reverse .row-reverse-block .row-reverse-block__text h2 {
   margin-left: 0px;
   color: #FFFFFF;
-  font-size: calc(30px + 3.515625vw);
+  font-size: calc(30px + 1.953125vw);
 }
 main .row-reverse .row-reverse-block .row-reverse-block__text p {
   font-weight: 200;
@@ -255,9 +257,8 @@ main .content {
 }
 
 footer {
-  margin-top: 200px;
+  margin-top: 10%;
   background-color: #282828;
-  height: 120px;
 }
 footer .footer-block {
   display: flex;
@@ -271,7 +272,6 @@ footer .footer-block button {
   border-radius: 10px;
   background-color: #FFB400;
   color: #282828;
-  margin-top: 20px;
   padding: 20px;
   font-size: 23px;
   box-shadow: 2px 2px 15px black;
@@ -330,5 +330,7 @@ footer .footer-block__link a img {
   margin-right: 10px;
 }
 footer .footer-block__link a:hover {
-  border-bottom: 1px solid #FFB400;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #FFB400;
+          text-decoration-color: #FFB400;
 }/*# sourceMappingURL=style.css.map */

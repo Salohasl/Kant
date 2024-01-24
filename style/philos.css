@@ -142,7 +142,7 @@ nav a:hover {
   position: fixed;
   background-color: #FFB400;
   right: 50px;
-  bottom: 10%;
+  bottom: 7%;
   border-radius: 20%;
   cursor: pointer;
   display: flex;
@@ -232,13 +232,30 @@ main .rigth .rigth-block .rigth-block__text p {
   font-size: calc(20px + 0.390625vw);
 }
 
+.block-line {
+  background-image: url(/img/phil.png);
+  background-position: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10%;
+}
+.block-line .block-line_text h2 {
+  font-size: calc(25px + 1.171875vw);
+  text-align: center;
+  font-weight: 200;
+  color: #282828;
+}
+
+footer {
+  margin-top: 0%;
+  background-color: #282828;
+}
 footer .footer-block {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  padding-bottom: 20px;
 }
 footer .footer-block button {
   border: none;
@@ -264,7 +281,6 @@ footer .footer-block__link a {
   text-decoration: none;
   color: #FFFFFF;
   font-size: 20px;
-  margin-top: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -272,7 +288,9 @@ footer .footer-block__link a {
   margin-bottom: 15px;
 }
 footer .footer-block__link a:hover {
-  border-bottom: 1px solid #FFB400;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #FFB400;
+          text-decoration-color: #FFB400;
 }
 footer .footer-block__link a img {
   margin-right: 10px;

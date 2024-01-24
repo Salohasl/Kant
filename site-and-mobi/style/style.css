@@ -138,7 +138,7 @@ nav a:hover {
   position: fixed;
   background-color: #FFB400;
   right: 50px;
-  bottom: 10%;
+  bottom: 3%;
   border-radius: 20%;
   cursor: pointer;
   display: flex;
@@ -192,6 +192,7 @@ main .cleonOn .cleonOn-block {
 }
 main .cleonOn .cleonOn-block img {
   cursor: pointer;
+  width: 40%;
   transition: 1s;
 }
 main .cleonOn .cleonOn-block img:hover {
@@ -223,6 +224,7 @@ main .gorka .gorka-block {
   justify-content: space-around;
 }
 main .gorka .gorka-block img {
+  width: 40%;
   cursor: pointer;
   transition: 1s;
 }
@@ -255,6 +257,7 @@ main .specTech .specTech-block {
   justify-content: space-around;
 }
 main .specTech .specTech-block img {
+  width: 40%;
   cursor: pointer;
   transition: 1s;
 }
@@ -290,6 +293,7 @@ main .content .festival .festival-block {
   justify-content: space-around;
 }
 main .content .festival .festival-block img {
+  width: 40%;
   cursor: pointer;
   transition: 1s;
 }
@@ -323,6 +327,7 @@ main .content .fishClub .fishClub-block {
   justify-content: space-around;
 }
 main .content .fishClub .fishClub-block img {
+  width: 40%;
   cursor: pointer;
   transition: 1s;
 }
@@ -347,9 +352,8 @@ main .content .fishClub .fishClub-block .fishClub-block__text p {
 }
 
 footer {
-  margin-top: 200px;
+  margin-top: 10%;
   background-color: #282828;
-  height: 120px;
 }
 footer .footer-block {
   display: flex;
@@ -421,5 +425,7 @@ footer .footer-block__link a img {
   margin-right: 10px;
 }
 footer .footer-block__link a:hover {
-  border-bottom: 1px solid #FFB400;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #FFB400;
+          text-decoration-color: #FFB400;
 }/*# sourceMappingURL=style.css.map */

@@ -143,7 +143,7 @@ nav{
     position: fixed;
     background-color: $yellow ;
     right: 50px;
-    bottom: 10%;
+    bottom: 7%;
     border-radius: 20%;
     cursor: pointer;
     display: flex;
@@ -194,6 +194,9 @@ main{
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-around;
+            img{
+              width: 40%;
+            }
             .polyarn-block__text{
                 color: $white;
                 p{
@@ -205,13 +208,16 @@ main{
     }
 
     .cleonOn{
-        margin-top: -200px;
+        margin-top: 10%;
         .cleonOn-block{
             display: flex;
             flex-direction: row-reverse;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-around;
+            img{
+              width: 40%;
+            }
             .cleonOn-block__text{
                 color: $white;
                 margin-top: -100px;
@@ -225,13 +231,16 @@ main{
     }
 
     .specTech{
-        margin-top: -200px;
+        margin-top: 10%;
         .specTech-block{
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-around;
+            img{
+              width: 40%;
+            }
             .specTech-block__text{
                 color: $white;
                 p{

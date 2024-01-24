@@ -78,7 +78,15 @@ if (!empty($_POST['name'])) {
   $data['errors']['name'] = 'Заполните это поле.';
   itc_log('Не заполнено поле name.');
 }
-
+// валидация phone
+if (!empty($_POST['phone'])) {
+  $data['form']['phone'] = preg_replace('/D/', '', $_POST['phone']);
+  if (!preg_match('/^(8|7)(d{10})$/', $phone)) {
+    $data['result'] = 'error';
+    $data['errors']['phone'] = 'Поле содержит не корректный номер.';
+    itc_log('Phone не корректный.');
+  }
+}
 // валидация email
 if (!empty($_POST['email'])) {
   $data['form']['email'] = $_POST['email'];
@@ -96,18 +104,14 @@ if (!empty($_POST['email'])) {
 // валидация message
 if (!empty($_POST['message'])) {
   $data['form']['message'] = htmlspecialchars($_POST['message']);
-  if (mb_strlen($data['form']['message'], 'UTF-8') < 20) {
-    $data['result'] = 'error';
-    $data['errors']['message'] = 'Это поле должно быть не меньше 20 cимволов.';
-    itc_log('Поле message должно быть не меньше 20 cимволов.');
-  }
-} else {
-  $data['result'] = 'error';
-  $data['errors']['message'] = 'Заполните это поле.';
-  itc_log('Не заполнено поле message.');
-}
+} 
 
-// проверка капчи
+//валидация messenger
+if (!empty($_POST['messenger'])) {
+  $data['form']['messenger'] = htmlspecialchars($_POST['messenger']);
+} 
+
+/* проверка капчи
 if (HAS_CHECK_CAPTCHA) {
   session_start();
   if ($_POST['captcha'] === $_SESSION['captcha']) {
@@ -117,7 +121,7 @@ if (HAS_CHECK_CAPTCHA) {
     $data['errors']['captcha'] = 'Код не соответствует изображению.';
     itc_log('Не пройдена капча. Указанный код ' . $_POST['captcha'] . ' не соответствует ' . $_SESSION['captcha']);
   }
-}
+}*/
 
 // валидация agree
 if ($_POST['agree'] == 'true') {
@@ -181,8 +185,8 @@ require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 if ($data['result'] == 'success' && HAS_SEND_EMAIL == true) {
   // получаем содержимое email шаблона и заменяем в нём
   $template = file_get_contents(dirname(__FILE__) . '/template/email.tpl');
-  $search = ['%subject%', '%name%', '%email%', '%message%', '%date%'];
-  $replace = [EMAIL_SETTINGS['subject'], $data['form']['name'], $data['form']['email'], $data['form']['message'], date('d.m.Y H:i')];
+  $search = ['%subject%', '%name%', '%email%', '%phone%', '%message%', '%message%', '%message%', '%messenger%', '%date%'];
+  $replace = [EMAIL_SETTINGS['subject'], $data['form']['name'], $data['form']['email'], $data['form']['message'], $data['form']['message'], $data['form']['message'], $data['form']['phone'], $data['form']['messenger'],date('d.m.Y H:i')];
   $body = str_replace($search, $replace, $template);
   // добавление файлов в виде ссылок
   if (HAS_ATTACH_IN_BODY && count($attachs)) {
@@ -265,6 +269,10 @@ if ($data['result'] == 'success' && HAS_WRITE_TXT) {
   $output .= 'Имя: ' . $data['form']['name'] . PHP_EOL;
   $output .= 'Email: ' . $data['form']['email'] . PHP_EOL;
   $output .= 'Сообщение: ' . $data['form']['message'] . PHP_EOL;
+  $output .= 'Сообщение: ' . $data['form']['message'] . PHP_EOL;
+  $output .= 'Сообщение: ' . $data['form']['message'] . PHP_EOL;
+  $output .= 'Телефон: ' . isset($data['form']['phone']) ? $data['form']['phone'] : 'не указан' . PHP_EOL;
+  $output .= 'Мессенджер: ' . $data['form']['messenger'] . PHP_EOL;
   if (count($attachs)) {
     $output .= 'Файлы:' . PHP_EOL;
     foreach ($attachs as $attach) {

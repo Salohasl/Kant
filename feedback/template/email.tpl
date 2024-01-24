@@ -18,7 +18,15 @@
                 <hr>
                 %message%
                 <hr>
+                %message%
+                <hr>
+                %message%
+                <hr>
                 Email пользователя: <b>%email%</b>
+                <br>
+                Телефон: <b>%phone%</b>
+                <br>
+                Мессенджер: <b>%messenger%</b>
                 <br>
                 Дата отправки: <b>%date%</b>
                 <br>

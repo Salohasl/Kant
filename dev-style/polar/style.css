@@ -142,7 +142,7 @@ nav a:hover {
   position: fixed;
   background-color: #FFB400;
   right: 50px;
-  bottom: 10%;
+  bottom: 7%;
   border-radius: 20%;
   cursor: pointer;
   display: flex;
@@ -197,6 +197,9 @@ main .polyarn .polyarn-block {
   align-items: center;
   justify-content: space-around;
 }
+main .polyarn .polyarn-block img {
+  width: 40%;
+}
 main .polyarn .polyarn-block .polyarn-block__text {
   color: #FFFFFF;
 }
@@ -205,7 +208,7 @@ main .polyarn .polyarn-block .polyarn-block__text p {
   font-size: calc(20px + 1.171875vw);
 }
 main .cleonOn {
-  margin-top: -200px;
+  margin-top: 10%;
 }
 main .cleonOn .cleonOn-block {
   display: flex;
@@ -213,6 +216,9 @@ main .cleonOn .cleonOn-block {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+}
+main .cleonOn .cleonOn-block img {
+  width: 40%;
 }
 main .cleonOn .cleonOn-block .cleonOn-block__text {
   color: #FFFFFF;
@@ -224,7 +230,7 @@ main .cleonOn .cleonOn-block .cleonOn-block__text p {
   font-size: calc(20px + 1.171875vw);
 }
 main .specTech {
-  margin-top: -200px;
+  margin-top: 10%;
 }
 main .specTech .specTech-block {
   display: flex;
@@ -232,6 +238,9 @@ main .specTech .specTech-block {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+}
+main .specTech .specTech-block img {
+  width: 40%;
 }
 main .specTech .specTech-block .specTech-block__text {
   color: #FFFFFF;

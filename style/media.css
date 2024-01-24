@@ -1,15 +1,9 @@
 @media only screen and (max-width:2560px){ 
-  main .dev-site{
-    margin-top: 40%;
-  }
-  .container{
-    background-size:cover;
-  }
+  
+  
 }
 @media only screen and (max-width:1800px){ 
-  main .dev-site{
-    margin-top: 20%;
-  }
+ 
 }
     
     @media only screen and (max-width:1200px){ 

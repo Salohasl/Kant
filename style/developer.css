@@ -142,7 +142,7 @@ nav a:hover {
   position: fixed;
   background-color: #FFB400;
   right: 50px;
-  bottom: 10%;
+  bottom: 7%;
   border-radius: 20%;
   cursor: pointer;
   display: flex;
@@ -248,13 +248,17 @@ main .rigth .rigth-block .rigth-block__text p {
   font-size: calc(20px + 0.390625vw);
 }
 
+footer {
+  margin-top: 10%;
+  border-top: 1px solid #FFFFFF;
+  background-color: #282828;
+}
 footer .footer-block {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  padding-bottom: 20px;
 }
 footer .footer-block button {
   border: none;
@@ -285,10 +289,11 @@ footer .footer-block__link a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
 }
 footer .footer-block__link a:hover {
-  border-bottom: 1px solid #FFB400;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #FFB400;
+          text-decoration-color: #FFB400;
 }
 footer .footer-block__link a img {
   margin-right: 10px;

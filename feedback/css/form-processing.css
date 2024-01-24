@@ -3,7 +3,15 @@
 *::after {
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  width: 0;
+}
 
+* {
+  box-sizing: border-box;
+  font-family: "Poiret One", sans-serif;
+  margin: 0;
+}
 .d-none {
   display: none !important;
 }
@@ -16,16 +24,40 @@ html {
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  text-align: left;
-  background-color: #fff;
+  background-image: url(/fon/brif.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+header{
+  width: 100%;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 2%;
+}
+nav a{
+  text-decoration: none; 
+  color: white;
+  font-size: 25px;
+}
+nav a:nth-of-type(2):hover{
+  text-decoration: underline;
+  text-decoration-color: #FFB400;
+}
+nav h2{
+  font-size: 40px;
+  color: white;
+  font-weight: 200;
+}
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
@@ -99,31 +131,38 @@ textarea {
   overflow: auto;
   resize: vertical;
 }
-
+.form__wrapper{
+  border-radius: 30px;
+  background-color: rgb(181,184,177, 0.8);
+  width: 90vw;
+  padding: 10%;
+  margin-top: 5%;
+}
+.btn_user{
+  background-color: #282828;
+  margin-bottom: -26%;
+  margin-left: -26%;
+  margin-right: -19%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 1.2;
+  font-size: calc(30px + 5 * (100vw / 1280));
+  font-weight: 200;
+  color: white;
+  margin-top: -5%;
+  margin-bottom: 5%;
   text-align: center;
 }
 
-.form__wrapper {
-  position: relative;
-  padding: 1rem;
-  border: 1px solid rgba(0, 0, 0, .125);
-  border-radius: 4px;
-  margin-bottom: 2rem;
-}
+
 
 .form-row {
   display: -ms-flexbox;
@@ -132,13 +171,13 @@ h1 {
   flex-wrap: wrap;
   margin-right: -5px;
   margin-left: -5px;
+  width: 100%;
 }
 
 @media (min-width: 576px) {
   .form-row>.form-group {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
     padding-right: 5px;
     padding-left: 5px;
   }
@@ -173,8 +212,9 @@ h1 {
 }
 
 label {
-  display: inline-block;
-  margin-bottom: .5rem;
+  color: white;
+  font-size: calc(20px + 5 * (100vw / 3080));
+  padding-left: 2%;
 }
 
 .invalid-feedback {
@@ -190,13 +230,56 @@ input[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
-
+.style_input{
+  background-color: rgba(213, 214, 211, 1);
+  height: 50px;
+  border-radius: 20px;
+  padding: 1%;
+  font-size: 30px;
+}
+.style_input::placeholder{
+  font-size: calc(20px + 5 * (100vw / 3080));
+}
+.btn{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.style_btn{
+  cursor: pointer;
+  text-align: center;
+  margin-top: 5%;
+    background-color: rgba(213, 214, 211, 1);
+    border: none;
+    width: 300px;
+    font-size: calc(25px + 5 * (100vw / 3080));
+    border-radius: 20px;
+}
+.style_btn:hover{
+  box-shadow: 2px 2px 10px #FFB400;
+}
+.style_btn:focus{
+  background-color: rgba(213, 214, 211, 1);
+  border: none;
+}
+.style_btn.active{
+  box-shadow: 2px 2px 10px #FFB400;
+}
 textarea.form-control {
   overflow: auto;
   resize: vertical;
   height: auto;
+  background-color: rgba(213, 214, 211, 1);
+  height: 50px;
+  border-radius: 20px;
+  
+  font-size: 30px;
 }
-
+textarea::placeholder{
+  font-size: calc(20px + 5 * (100vw / 3080));
+}
 /* Стили для секции, с помощью которой можно добавить к форме файлы */
 .form-attach__label {
   margin-bottom: 0.5rem;
@@ -360,9 +443,11 @@ textarea.form-control {
 
 /* CSS для секции "Пользовтельское соглашение" */
 .form-check {
-  display: block;
-  min-height: 1.5rem;
-  padding-left: 1.5em;
+  display: flex;
+  align-items: center;
+  margin-top: 3%;
+  padding-left: 12%;
+  
 }
 
 .form-check-input.is-invalid,
@@ -371,9 +456,9 @@ textarea.form-control {
 }
 
 .form-check-input {
-  width: 1em;
-  height: 1em;
-  margin-top: 0.25em;
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
   vertical-align: top;
   background-color: #fff;
   background-repeat: no-repeat;
@@ -403,14 +488,17 @@ textarea.form-control {
 }
 
 .form-check-input:checked {
-  border-color: #9e9e9e;
+  border: 2px solid black;
   background-color: #9e9e9e;
 }
 
 .form-check-label {
   margin-bottom: 0;
+  color: white;
 }
-
+.form-check-label a{
+  color: #FFB400;
+}
 .is-invalid~.invalid-feedback,
 .is-invalid~.invalid-tooltip,
 .was-validated :invalid~.invalid-feedback,
@@ -552,6 +640,7 @@ textarea.form-control.is-valid {
 textarea.form-control.is-invalid {
   padding-right: calc(1.5em + .75rem);
   background-position: top calc(.375em + .1875rem) right calc(.375em + .1875rem);
+  
 }
 
 
@@ -563,10 +652,13 @@ textarea.form-control.is-invalid {
 .form-control.is-invalid~.invalid-feedback,
 .is-invalid .invalid-feedback {
   display: block;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .form-submit {
-  text-align: right;
+  text-align: center;
+  margin-top: 5%;
 }
 
 /* CSS для кнопки submit */
@@ -574,34 +666,30 @@ button[type="submit"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 400;
-  color: #fff;
+  font-weight: 300;
+  color: black;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #007bff;
-  border: 1px solid #007bff;
+  background-color: #FFB400;
+  border: none;
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: .25rem;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px black;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   position: relative;
+  width: 300px;
+  font-size: calc(25px + 5 * (100vw / 3080));
 }
 
 button[type="submit"]:disabled {
   opacity: 0.65;
 }
 
-button[type="submit"]:not(:disabled)::before {
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  margin-right: .5rem;
-  background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512.333 512'%3E%3Cpath fill='%23fff' d='M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z'/%3E%3C/svg%3E") transparent no-repeat center center;
-  background-size: 100% 100%;
-}
+
 
 @keyframes spinner-border {
   100% {
@@ -624,8 +712,7 @@ button[type="submit"]:disabled::before {
 
 button[type="submit"]:not(:disabled):hover {
   color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: rgb(181,184,177, 0.8);
 }
 
 button[type="submit"]:not(:disabled):focus {

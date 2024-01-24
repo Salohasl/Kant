@@ -144,7 +144,7 @@ nav{
     position: fixed;
     background-color: $yellow ;
     right: 50px;
-    bottom: 10%;
+    bottom: 7%;
     border-radius: 20%;
     cursor: pointer;
     display: flex;
@@ -257,13 +257,15 @@ main{
 }
 
 footer{
+  margin-top: 10%;
+  border-top: 1px solid $white;
+  background-color: $dark;
   .footer-block{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    padding-bottom: 20px;
     button{
 
       border: none;
@@ -294,9 +296,9 @@ footer{
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      margin-bottom: 15px;
       &:hover{
-        border-bottom: 1px solid $yellow;
+        text-decoration: underline;
+        text-decoration-color: $yellow;
       }
       img{
         margin-right: 10px;

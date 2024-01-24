@@ -135,7 +135,7 @@ nav a:hover {
   position: fixed;
   background-color: #FFB400;
   right: 50px;
-  bottom: 10%;
+  bottom: 7%;
   border-radius: 20%;
   cursor: pointer;
   display: flex;
@@ -161,7 +161,7 @@ nav a:hover {
 
 @media (hover: hover) and (pointer: fine) {
   .btn-up:hover {
-    background-color: #202020; /* цвет заднего фона при наведении */
+    background-color: #282828; /* цвет заднего фона при наведении */
   }
 }
 .container {
@@ -170,41 +170,62 @@ nav a:hover {
   background-size: cover;
 }
 
+.line {
+  background-image: url(/fon/Group\ 81.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 main {
   color: #FFFFFF;
+  background-image: url(/fon/Group\ 81.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 main h2 {
-  font-size: 45px;
+  font-size: calc(30px + 1.171875vw);
   font-weight: 200;
 }
 main .table {
-  background-image: url(/fon/fonHome-header.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 800px;
+  background-color: white;
+  margin-top: -5%;
+  padding: 8%;
+  width: 100%;
+  height: 120vh;
+  transform: skewY(-7deg);
 }
 main .table-content {
+  margin-top: 5%;
   color: #FFFFFF;
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
   justify-content: center;
-  padding-top: 10%;
+  transform: skewY(7deg);
+}
+main .table-content img {
+  margin-right: -20%;
+  margin-bottom: -15.5%;
+  width: 70%;
 }
 main .table-content .table-content__block {
-  width: 800px;
-  height: 500px;
+  width: 62%;
+  height: 70vh;
   background-color: #282828;
-  padding-left: 10%;
+  margin-left: -20%;
+  margin-right: -8%;
+  padding-top: 5%;
+  padding-left: 20%;
 }
 main .table-content p {
-  font-size: 25px;
+  font-size: calc(20px + 0.390625vw);
   font-weight: 100;
   line-height: 30px;
   margin-top: 50px;
 }
 main .dev-site {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -213,9 +234,6 @@ main .dev-site a {
   text-decoration: none;
   color: #FFFFFF;
 }
-main .dev-site .dev-site-block {
-  margin-right: 200px;
-}
 main .dev-site .dev-site-block .dev-site-block__anim {
   display: flex;
   align-items: center;
@@ -223,16 +241,19 @@ main .dev-site .dev-site-block .dev-site-block__anim {
   flex-direction: row;
   position: absolute;
 }
+main .dev-site .dev-site-block .dev-site-block__anim h2 {
+  font-size: calc(30px + 1.953125vw);
+}
 main .dev-site .dev-site-block .dev-site-block__anim:hover {
   border-bottom: 3px solid #FFB400;
 }
 main .dev-site .dev-site-block .dev-site-block__anim:hover .dev-site__border {
-  margin-left: 170px;
+  margin-left: 45%;
 }
 main .dev-site .dev-site-block .dev-site__border {
   position: absolute;
-  margin-top: 115px;
-  margin-left: 150px;
+  margin-top: 30%;
+  margin-left: 35%;
   border-bottom: 4px solid #FFFFFF;
   border-right: 4px solid #FFFFFF;
   height: 20px;
@@ -242,6 +263,8 @@ main .dev-site .dev-site-block .dev-site__border {
   transition: 0.5s;
 }
 main .dev-site img {
+  margin-left: 20%;
+  width: 35vw;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -251,15 +274,15 @@ main .dev-style {
   flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
-  padding-top: 200px;
+  width: 80%;
+  padding-top: 10%;
 }
 main .dev-style a {
   text-decoration: none;
   color: #FFFFFF;
 }
 main .dev-style .dev-style-block {
-  margin-left: -80px;
-  margin-right: 500px;
+  margin-left: -30%;
 }
 main .dev-style .dev-style-block .dev-style-block__anim {
   display: flex;
@@ -268,16 +291,19 @@ main .dev-style .dev-style-block .dev-style-block__anim {
   flex-direction: row;
   position: absolute;
 }
+main .dev-style .dev-style-block .dev-style-block__anim h2 {
+  font-size: calc(25px + 1.5625vw);
+}
 main .dev-style .dev-style-block .dev-style-block__anim:hover {
   border-bottom: 3px solid #FFB400;
 }
 main .dev-style .dev-style-block .dev-style-block__anim:hover .dev-style__border {
-  margin-left: 430px;
+  margin-left: 120%;
 }
 main .dev-style .dev-style-block .dev-style__border {
   position: absolute;
-  margin-top: 65px;
-  margin-left: 400px;
+  margin-top: 18%;
+  margin-left: 110%;
   border-bottom: 4px solid #FFFFFF;
   border-right: 4px solid #FFFFFF;
   height: 20px;
@@ -323,16 +349,19 @@ main .dev-advert .dev-advert-block .dev-advert-block__anim {
   flex-direction: row;
   position: absolute;
 }
+main .dev-advert .dev-advert-block .dev-advert-block__anim h2 {
+  font-size: calc(30px + 1.953125vw);
+}
 main .dev-advert .dev-advert-block .dev-advert-block__anim:hover {
   border-bottom: 3px solid #FFB400;
 }
 main .dev-advert .dev-advert-block .dev-advert-block__anim:hover .dev-advert__border {
-  margin-left: 70px;
+  margin-left: 20%;
 }
 main .dev-advert .dev-advert-block .dev-advert__border {
   position: absolute;
-  margin-top: 60px;
-  margin-left: 50px;
+  margin-top: 15%;
+  margin-left: 10%;
   border-bottom: 4px solid #FFFFFF;
   border-right: 4px solid #FFFFFF;
   height: 20px;
@@ -354,40 +383,25 @@ main .dev-advert .dev-advert__img a img {
      object-fit: cover;
   border: 3px solid #FFFFFF;
   border-radius: 15px;
+  width: 60%;
 }
 main .dev-advert .dev-advert__img a .pena {
   margin-top: -200px;
   margin-left: 150px;
   z-index: -100;
-  width: 300px;
-  height: 450px;
-}
-main .map {
-  margin-top: 100px;
-}
-main .map h2 {
-  text-align: center;
-  margin-bottom: 50px;
-  margin-top: -10px;
-}
-main .map .map-yandex {
-  border-radius: 4px solid white;
-  border-radius: 40px;
 }
 
-#map > ymaps {
-  border-radius: 40px;
-  overflow: hidden;
-  border: 2px solid #FFFFFF;
+footer {
+  margin-top: 10%;
+  border-top: 1px solid #FFFFFF;
+  background-color: #282828;
 }
-
 footer .footer-block {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  padding-bottom: 20px;
 }
 footer .footer-block button {
   border: none;
@@ -418,10 +432,11 @@ footer .footer-block__link a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
 }
 footer .footer-block__link a:hover {
-  border-bottom: 1px solid #FFB400;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #FFB400;
+          text-decoration-color: #FFB400;
 }
 footer .footer-block__link a img {
   margin-right: 10px;

@@ -142,7 +142,7 @@ nav a:hover {
   position: fixed;
   background-color: #FFB400;
   right: 50px;
-  bottom: 10%;
+  bottom: 7%;
   border-radius: 20%;
   cursor: pointer;
   display: flex;
@@ -198,6 +198,8 @@ main .polyarn .polyarn-block {
   justify-content: space-around;
 }
 main .polyarn .polyarn-block img {
+  width: 100%;
+  height: 400px;
   opacity: 0.3;
   cursor: pointer;
   transition: 1s;
@@ -219,7 +221,7 @@ main .polyarn .polyarn-block .polyarn-block__text p {
   font-size: calc(20px + 1.171875vw);
 }
 main .cleonOn {
-  margin-top: -100px;
+  margin-top: 10%;
 }
 main .cleonOn .cleonOn-block {
   display: flex;
@@ -229,6 +231,8 @@ main .cleonOn .cleonOn-block {
   justify-content: space-around;
 }
 main .cleonOn .cleonOn-block img {
+  width: 100%;
+  height: 400px;
   opacity: 0.3;
   cursor: pointer;
   transition: 1s;
@@ -251,7 +255,7 @@ main .cleonOn .cleonOn-block .cleonOn-block__text p {
   font-size: calc(20px + 1.171875vw);
 }
 main .zelek {
-  margin-top: 0px;
+  margin-top: 10%;
 }
 main .zelek .zelek-block {
   display: flex;
@@ -261,6 +265,8 @@ main .zelek .zelek-block {
   justify-content: space-around;
 }
 main .zelek .zelek-block img {
+  width: 100%;
+  height: 400px;
   opacity: 0.3;
   cursor: pointer;
   transition: 1s;
@@ -283,9 +289,8 @@ main .zelek .zelek-block .zelek-block__text p {
 }
 
 footer {
-  margin-top: 200px;
+  margin-top: 10%;
   background-color: #282828;
-  height: 120px;
 }
 footer .footer-block {
   display: flex;
@@ -329,5 +334,7 @@ footer .footer-block__link a img {
   margin-right: 10px;
 }
 footer .footer-block__link a:hover {
-  border-bottom: 1px solid #FFB400;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #FFB400;
+          text-decoration-color: #FFB400;
 }/*# sourceMappingURL=style.css.map */

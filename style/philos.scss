@@ -144,7 +144,7 @@
       position: fixed;
       background-color: $yellow ;
       right: 50px;
-      bottom: 10%;
+      bottom: 7%;
       border-radius: 20%;
       cursor: pointer;
       display: flex;
@@ -235,18 +235,34 @@ main{
     }
   }
 }
-  
+.block-line{
+  background-image: url(/img/phil.png);
+  background-position: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10%;
+  .block-line_text{
+    
+    h2{
+    
+      font-size: calc(25px + 15 * (100vw / 1280));
+      text-align: center;
+      font-weight: 200;
+      color: $dark;
+    }
+  }
+}
   footer{
-  
+    margin-top: 0%;
+    background-color: $dark;
     .footer-block{
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-around;
-      padding-bottom: 20px;
+      
       button{
-  
         border: none;
         border-radius: 10px;
         background-color: $yellow;
@@ -270,14 +286,14 @@ main{
         text-decoration: none;
         color: $white;
         font-size: 20px;
-        margin-top: 15px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         margin-bottom: 15px;
         &:hover{
-          border-bottom: 1px solid $yellow;
+          text-decoration: underline;
+          text-decoration-color: $yellow;
         }
         img{
           margin-right: 10px;
