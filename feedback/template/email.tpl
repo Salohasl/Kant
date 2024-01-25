@@ -22,11 +22,17 @@
                 <hr>
                 %message%
                 <hr>
+                %age%
+                <hr>
                 Email пользователя: <b>%email%</b>
                 <br>
                 Телефон: <b>%phone%</b>
                 <br>
                 Мессенджер: <b>%messenger%</b>
+                <br>
+                Пол: <b>%gender%</b>
+                <br>
+                Услуга: <b>%service%</b>
                 <br>
                 Дата отправки: <b>%date%</b>
                 <br>
