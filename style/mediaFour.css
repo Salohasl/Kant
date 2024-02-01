@@ -1,0 +1,266 @@
+@media  screen and (width > 2060px){
+  .header-fon{
+    height: 35vh;
+  }
+  main h2{
+    margin-top: -8%;
+  }
+  footer .footer-block{
+    height: 15vh;
+  }
+  footer .footer-block__link{
+    margin-bottom: 1%;
+  }
+}
+  
+  @media only screen and (max-width:1200px){ 
+    header a{
+      font-size: 20px;
+    }
+  }
+  
+  @media only screen and (max-width:992px){
+    nav{
+      display: none;
+    }
+    .menuBtn{
+      display: flex;
+    }
+    
+    nav.popUp{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 75vw;
+      animation-duration: 0.55s;  /* Время работы анимации */
+      animation-fill-mode: both;  /* Поведение анимации */
+      animation-name: fadeInDown;/* Имя анимации */
+    } 
+    nav ul{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+    }
+    nav ul a{
+      display: flex;
+      padding-top: 20px;
+    }
+    nav a{
+      display: none;
+    }
+    header button{
+      margin-left: -100%;
+    }
+    .header-nav__link{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-bottom: 35%;
+      margin-left: 5%;
+    }
+    .header-nav__link a{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      padding-top: 15px;
+      
+    }
+    .header-nav__link a img{
+      margin-right: 5px;
+    }
+    @keyframes fadeInDown { /* Сама анимация */
+      0% {                /* Старт анимации */
+          opacity: 0;
+          transform: translate3d(100%, 0px, 0px);
+      }
+      100% {              /* в финале анимации - финал это заданная 0.55s */
+          opacity: 1;
+          transform: none;
+      }
+    }
+
+    .header-fon{
+      height: 30vh;
+    }
+    main h2{
+      margin-top: -15%;
+    }
+    main .content{
+        display: block;
+      }
+      footer .upDisplay{
+        display: none;
+      }
+      footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0%;
+        border-bottom: 4px solid #F7F6F1;
+    }
+    footer .footer-block button{
+        margin-top: 0%;  
+        margin-left: 0%;
+        
+    }
+    footer .footer-block{
+      height: 80px;
+      margin-top: 0%;
+    }
+    .footer-block__link{
+        display: none;
+    }
+    .footer-block__link a{
+      display: none;
+    }
+    footer .footer-block{
+      background-image: none;
+    }
+  }
+
+
+
+
+  @media only screen and (max-width:768px){ /*-------ГОТОВО-------*/
+    .menuBtn{
+      margin-left: 80%;
+    }
+    header .header-figur{
+      display: none;
+    }
+    header button{
+      margin-left: -120%;
+    }
+    
+
+  }
+
+
+
+  /* МОБИЛКА*/
+  @media only screen and (max-width:570px){  
+
+    .menuBtn{
+      margin-left: 70%;
+    }
+    
+    header button{
+      margin-left: -90%;
+      height: 40px;
+      font-size: 18px;
+    }
+
+    /*РАЗРАБОТКА САЙТА*/
+    .header-fon{
+        height: 230px;
+      }
+      main h2{
+        margin-top: -23%;
+        font-size: 25px;
+      }
+      /*БРЕНДБУКИ*/
+
+main .polyarn .polyarn-block{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -10%;
+  }
+  main .polyarn .polyarn-block img{
+    width: 80%;
+    height: 50%;
+    object-fit: cover;
+    margin-top: 10%;
+  }
+ 
+  main .cleonOn .cleonOn-block{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  main .cleonOn .cleonOn-block img{
+    width: 80%;
+    height: 50%;
+    object-fit: cover;
+    margin-bottom: 28%;
+    margin-top: 10%;
+  }
+  main .content{
+    margin-top: -30%;
+  }
+  .mediaCleon{
+    margin-top: 50%;
+  }
+  .mediaZel{
+    margin-top: 10%;
+  }
+  main .zelek .zelek-block{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30%;
+   
+  }
+  main .zelek .zelek-block img{
+    margin-bottom: 28%;
+    width: 80%;
+    height: 50%;
+    object-fit: cover;
+  }
+      footer {
+        height: auto;
+      }
+      footer .footer-block{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      footer .footer-block .back{
+        margin-top: 2%;
+        margin-bottom: 5%;
+        margin-left: -5%;
+      }
+      footer .footer-block button{
+        margin-bottom: 5%;
+        margin-top: 10%;
+      }
+      .logo{
+        width: 50px;
+        height: 50px;
+        margin-bottom: 2px;
+      }
+  }
+  @media only screen and (max-width:400px){
+   
+    header button{
+      margin-left: -70%;
+      height: 40px;
+      font-size: 18px;
+    }
+    
+   
+    main h2{
+        font-size: 20px;
+        margin-top: -25%;
+        margin-left: 2%;
+      }
+    
+  }
+  @media only screen and (max-width:320px){
+    
+  }
+  

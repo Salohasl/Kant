@@ -8,7 +8,7 @@
 }
 $yellow: #FFB400;
 $dark: #282828;
-$white: #FFFFFF;
+$white: #F7F6F1;
 
 html {
     scroll-behavior: smooth;
@@ -70,6 +70,7 @@ body{
 
 
 header{
+  border-top: 4px solid $white;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -80,6 +81,29 @@ header{
   top: 0;
   background-color: $dark;
   transition: 1s;
+  .header_left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-figur{
+    border-bottom: 70px solid $white;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 0;
+    width:25vw;
+    transition: .5s;
+    margin-left: 5%;
+    &.colorFigure{
+      transition:.5s;
+      border-bottom: 70px solid rgb(40,40,40, 0.1);
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      height: 0;
+      width:25vw;
+    }
+  }
   &.color{
     background-color: rgb(40,40,40, 0.5);
     transition: 1s;
@@ -95,8 +119,7 @@ header{
     color: $dark;
     border: none;
     box-shadow: 2px 2px 10px black;
-    width: 176px;
-    height: 52px;
+    padding: 10px;
     font-size: 23px;
     transition: .5s;
     cursor: pointer;
@@ -106,12 +129,11 @@ header{
     }
   }
 }
-.active{
-    border-bottom: 2px solid $yellow;
-  }
+
 .logo{
   margin-top: 5px;
   margin-left: 20px;
+  width: 60px;
 }
 .header-nav__link{
   display: none;
@@ -146,20 +168,27 @@ nav{
 
 
 
-  .container{
-    background-image: url(/fon/fonSiteandMob.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-  }
+.container{
+  background-image: url(/fon/fonProm.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header-fon{
+  background-image: url(/fon/Vector\ 48.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  margin-top: -10%;
+  height: 60vh;
+}
 main{
-    margin-top: 10%;
-    h2{
-        color: $dark;
-        font-size: calc(30px + 15 * (100vw / 1280));
-        font-weight: 200;
-        margin-left: 50px;
-    }
+  h2{
+    color: $dark;
+      font-size: calc(30px + 15 * (100vw / 1280));
+      font-weight: 200;
+      margin-left: 50px;
+      margin-top: -11%;
+  }
     .polyarn{
         margin-top: 15%;
         .polyarn-block{
@@ -171,16 +200,12 @@ main{
             img{
               width: 100%;
               height: 400px;
-                opacity: .3;
                 cursor: pointer;
                 transition: 1s;
-                &:hover{
-                    opacity: 1;
-                }
             }
             .polyarn-block__text{
                 color: $white;
-
+                margin-top: 3%;
                 h2{
                     margin-left: 0px;
                     color: $white;
@@ -206,16 +231,13 @@ main{
             img{
               width: 100%;
               height: 400px;
-                opacity: .3;
                 cursor: pointer;
                 transition: 1s;
-                &:hover{
-                    opacity: 1;
-                }
+
             }
             .cleonOn-block__text{
                 color: $white;
-                margin-top: -100px;
+                margin-top: 3%;
                 h2{
                     margin-left: 0px;
                     color: $white;
@@ -229,7 +251,9 @@ main{
             }
         }
     }
-
+    .content{
+      display: none;
+    }
     .zelek{
         margin-top: 10%;
         .zelek-block{
@@ -241,16 +265,12 @@ main{
             img{
               width: 100%;
               height: 400px;
-                opacity: .3;
                 cursor: pointer;
                 transition: 1s;
-                &:hover{
-                    opacity: 1;
-                }
             }
             .zelek-block__text{
                 color: $white;
-
+                margin-top: 3%;
                 h2{
                     margin-left: 0px;
                     color: $white;
@@ -269,52 +289,92 @@ main{
 
 
 
-  footer{
-    margin-top: 10%;
-    background-color: $dark;
-    .footer-block{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-around;
-      button{
-        border: none;
-        border-radius: 10px;
-        background-color: $yellow;
-        color: $dark;
-        padding: 20px;
-        font-size: 23px;
-        box-shadow: 2px 2px 15px black;
-        cursor: pointer;
-        transition: 1s;
-        &:hover{
-          background-color: $white;
-        }
-      }
-    }
-    .footer-block__link{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-      a{
-        text-decoration: none;
-        color: $white;
-        font-size: 25px;
-        margin-top: 15px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        img{
-          margin-right: 10px;
-        }
-        margin-bottom: 15px;
-        &:hover{
-          text-decoration: underline;
-          text-decoration-color: $yellow;
-        }
+footer{
+  background: $dark;
+  background: linear-gradient(2.7deg, $dark 68%, rgba(0,164,255,0) 80%);
+  margin-top: 5%;
+  border-bottom: 4px solid $white;
+  .footer-block{
+    margin-top: 2%;
+    background-image: url(/fon/fon-footer.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25vh;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 1%;
+    button{
+      margin-left: -20%;
+      border-radius: 10px;
+      background-color:  $yellow;
+      color: $dark;
+      border: none;
+      box-shadow: 2px 2px 10px black;
+      padding: 10px;
+      font-size: 23px;
+      transition: .5s;
+      cursor: pointer;
+      &:hover{
+        transition: .5s;
+        background-color: $white;
       }
     }
   }
+  .upDisplay{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-bottom: 2%;
+      margin-left: 5%;
+      p{
+          color: $white;
+          font-size: 22px;
+      }
+      .border{
+          margin-left: 15px;
+          border-bottom: 4px solid $white;
+          border-right: 4px solid $white;
+          height: 20px;
+          width: 20px;
+          transform: rotate(-45deg);
+          cursor: pointer;
+          transition: .5s;
+      }
+      &:hover{
+          border-bottom: 2px solid $yellow;
+          .border{
+              margin-left: 20px;
+          }
+      }
+  }
+}
+.footer-block__link{
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 5%;
+  margin-top: 2%;
+a{
+  text-decoration: none;
+  color: $white;
+  font-size: 20px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  &:hover{
+    text-decoration: underline;
+    text-decoration-color: $yellow;
+  }
+  img{
+    margin-right: 10px;
+  }
+}
+}

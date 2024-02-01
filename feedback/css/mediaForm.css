@@ -1,0 +1,143 @@
+@media  screen and (width > 2060px){
+  
+  main h2{
+    margin-top: -8%;
+  }
+  .form-submit{
+    margin-top: 6.4%;
+  }
+  footer{
+    height: 20vh;
+  }
+  .block-footer{
+    height: 20vh;
+  }
+  .style_btn-text{
+    width: 25vw;
+  }
+  footer .footer-block{
+    height: 25vh;
+  }
+  
+}
+
+@media only screen and (max-width:1200px){ 
+    header{
+      background-image: none;
+      background-color: #282828;
+      margin-bottom: 5%;
+    }
+    footer{
+      background-image: none;
+      background-color: #282828;
+      height: 15vh;
+      margin-top: 5%;
+    }
+    .form-submit{
+      margin-right: -10%;
+      margin-top: 3%;
+    }
+    .style_sogl{
+      margin-left: -20%;
+      margin-top: 5%;
+    }
+  }
+  
+  @media only screen and (max-width:992px){
+    
+  }
+
+  @media only screen and (max-width:768px){ /*-------ГОТОВО-------*/
+    .form__wrapper{
+      width: 400px;
+    }
+    .header-fon{
+      display: none;
+    }
+    .container{
+      margin-top: 20%;
+    }
+    footer{
+      height: 15vh;
+    }
+    .form-submit{
+      margin-right: 1.8%;
+      margin-top: -5%;
+    }
+    .style_sogl{
+      margin-left: 5%;
+      margin-top: 15%;
+    }
+    .block-forma__elemt{
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+    }
+    .form-row {
+      flex-direction: column;
+    }
+    .block-foote{
+      display: none;
+    }
+    header .header-figur{
+      display: none;
+    }
+  }
+
+  /* МОБИЛКА*/
+  @media only screen and (max-width:570px){  
+    header .navig h2{
+      font-size: 20px;
+    }
+    h1{
+      font-size: 25px;
+    }
+    .form__wrapper{
+      margin-top: 10%;
+      width: 350px;
+    }
+    .block-forma__elemt{
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+    }
+    .style_btn-text{
+      width: 70vw;
+    }
+    .style_input-btn{
+      margin-left: 20%;
+      width: 60%;
+    }
+    .form-submit{
+      margin-top: -5%;
+    }
+    .block-footer{
+      display: none;
+    }
+    footer{
+      height: 180px;
+    }
+    .form-success__message h2{
+      font-size: 17px;
+    }
+    .form-success__message{
+      width: 90%;
+      height: 30%;
+    }
+    .form-success__btn{
+      margin-top: 7%;
+    }
+  }
+  @media only screen and (max-width:400px){
+    .form__wrapper{
+      width: 100%;
+    }
+    .style_input-btn{
+      margin-left: 22%;
+      width: 57%;
+    }
+  }
+  @media only screen and (max-width:320px){
+    
+  }
+  

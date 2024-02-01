@@ -38,16 +38,16 @@ const HAS_SEND_EMAIL = true;
 // добавить ли прикреплённые файлы в тело письма в виде ссылок
 const HAS_ATTACH_IN_BODY = true;
 const EMAIL_SETTINGS = [
-  'addresses' => ['manager@domain.com'], // кому необходимо отправить письмо
-  'from' => ['no-reply@domain.com', 'Имя сайта'], // от какого email и имени необходимо отправить письмо
+  'addresses' => ['Sales@kantdesign.ru'], // кому необходимо отправить письмо
+  'from' => ['Sales@kantdesign.ru', 'kant-design.ru'], // от какого email и имени необходимо отправить письмо
   'subject' => 'Сообщение с формы обратной связи', // тема письма
   'host' => 'ssl://smtp.yandex.ru', // SMTP-хост
-  'username' => 'name@yandex.ru', // // SMTP-пользователь
-  'password' => '*********', // SMTP-пароль
+  'username' => 'Sales@kantdesign.ru', // // SMTP-пользователь
+  'password' => 'nrmvbxtthiskbpbi', // SMTP-пароль
   'port' => '465' // SMTP-порт
 ];
 const HAS_SEND_NOTIFICATION = false;
-const BASE_URL = 'https://domain.com';
+const BASE_URL = 'https://kant-design.ru/';
 const SUBJECT_FOR_CLIENT = 'Ваше сообщение доставлено';
 //
 const HAS_WRITE_TXT = true;
@@ -78,53 +78,32 @@ if (!empty($_POST['name'])) {
   $data['errors']['name'] = 'Заполните это поле.';
   itc_log('Не заполнено поле name.');
 }
-//Валидация phone
+
+
+
+/*Валидация Phone */
 if (!empty($_POST['phone'])) {
-  $data['form']['phone'] = htmlspecialchars($_POST['name']);
-} else {
-  $data['result'] = 'error';
-  $data['errors']['phone'] = 'Заполните это поле.';
-  itc_log('Не заполнено поле name.');
+  $data['form']['phone'] = preg_replace('/D/', '', $_POST['phone']);
 }
-
-
-
-
 // валидация message
-if (!empty($_POST['message'])) {
+if (isset($_POST['message'])) {
   $data['form']['message'] = htmlspecialchars($_POST['message']);
 } 
 
 //валидация messenger
-if (!empty($_POST['messenger'])) {
+if (isset($_POST['messenger'])) {
   $data['form']['messenger'] = htmlspecialchars($_POST['messenger']);
-} 
+}
 
-//валижация Age
-if (!empty($_POST['age'])) {
-  $data['form']['age'] = htmlspecialchars($_POST['age']);
-} 
-
-//валижация gender
-if (!empty($_POST['gender'])) {
-  $data['form']['gender'] = htmlspecialchars($_POST['gender']);
-} 
-
-//валижация service
-if (!empty($_POST['service'])) {
+//валидация service
+if (isset($_POST['service'])) {
   $data['form']['service'] = htmlspecialchars($_POST['service']);
-} 
-/* проверка капчи
-if (HAS_CHECK_CAPTCHA) {
-  session_start();
-  if ($_POST['captcha'] === $_SESSION['captcha']) {
-    $data['form']['captcha'] = $_POST['captcha'];
-  } else {
-    $data['result'] = 'error';
-    $data['errors']['captcha'] = 'Код не соответствует изображению.';
-    itc_log('Не пройдена капча. Указанный код ' . $_POST['captcha'] . ' не соответствует ' . $_SESSION['captcha']);
-  }
-}*/
+}
+
+//валидация brand
+if (isset($_POST['brand'])) {
+  $data['form']['brand'] = htmlspecialchars($_POST['brand']);
+}
 
 // валидация agree
 if ($_POST['agree'] == 'true') {
@@ -136,8 +115,29 @@ if ($_POST['agree'] == 'true') {
 }
 
 // валидация прикреплённых файлов
-if (empty($_FILES['attach']));
-
+if (empty($_FILES['attach'])) {
+  if (HAS_ATTACH_REQUIRED) {
+    $data['result'] = 'error';
+    $data['errors']['attach'] = 'Заполните это поле.';
+    itc_log('Не прикреплены файлы к форме.');
+  }
+} else {
+  foreach ($_FILES['attach']['error'] as $key => $error) {
+    if ($error == UPLOAD_ERR_OK) {
+      $name = basename($_FILES['attach']['name'][$key]);
+      $size = $_FILES['attach']['size'][$key];
+      $mtype = mime_content_type($_FILES['attach']['tmp_name'][$key]);
+      if (!in_array($mtype, ALLOWED_MIME_TYPES)) {
+        $data['result'] = 'error';
+        $data['errors']['attach'][$key] = 'Файл имеет не разрешённый тип.';
+        itc_log('Прикреплённый файл ' . $name . ' имеет не разрешённый тип.');
+      } else if ($size > MAX_FILE_SIZE) {
+        $data['result'] = 'error';
+        $data['errors']['attach'][$key] = 'Размер файла превышает допустимый.';
+        itc_log('Размер файла ' . $name . ' превышает допустимый.');
+      }
+    }
+  }
   if ($data['result'] === 'success') {
     // перемещаем файлы в папку UPLOAD_PATH
     foreach ($_FILES['attach']['name'] as $key => $attach) {
@@ -165,10 +165,10 @@ require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
 if ($data['result'] == 'success' && HAS_SEND_EMAIL == true) {
-  // получаем содержимое email шаблона и заменяем в нём
+  // получаем содержимое email шаблона и заменяем в нём 
   $template = file_get_contents(dirname(__FILE__) . '/template/email.tpl');
-  $search = ['%subject%', '%name%', '%email%', '%phone%', '%message%', '%message%', '%message%', '%message%', '%message%', '%message%', '%messenger%', '%age%', '%gender%', '%service%','%date%'];
-  $replace = [EMAIL_SETTINGS['subject'], $data['form']['name'], $data['form']['email'], $data['form']['message'], $data['form']['message'], $data['form']['message'], $data['form']['message'], $data['form']['message'], $data['form']['message'], $data['form']['phone'], $data['form']['messenger'], $data['form']['age'], $data['form']['gender'], $data['form']['service'],date('d.m.Y H:i')];
+  $search = ['%subject%', '%name%', '%message%', '%messenger%', '%service%', '%brand%', '%phone%', '%date%'];
+  $replace = [EMAIL_SETTINGS['subject'], $data['form']['name'], $data['form']['message'], $data['form']['messenger'], $data['form']['service'], $data['form']['brand'], $data['form']['phone'], date('d.m.Y H:i')];
   $body = str_replace($search, $replace, $template);
   // добавление файлов в виде ссылок
   if (HAS_ATTACH_IN_BODY && count($attachs)) {
@@ -249,18 +249,11 @@ if ($data['result'] == 'success' && HAS_SEND_NOTIFICATION) {
 if ($data['result'] == 'success' && HAS_WRITE_TXT) {
   $output = '=======' . date('d.m.Y H:i') . '=======';
   $output .= 'Имя: ' . $data['form']['name'] . PHP_EOL;
-  $output .= 'Email: ' . $data['form']['email'] . PHP_EOL;
   $output .= 'Сообщение: ' . $data['form']['message'] . PHP_EOL;
-  $output .= 'Сообщение: ' . $data['form']['message'] . PHP_EOL;
-  $output .= 'Сообщение: ' . $data['form']['message'] . PHP_EOL;
-  $output .= 'Сообщение: ' . $data['form']['message'] . PHP_EOL;
-  $output .= 'Сообщение: ' . $data['form']['message'] . PHP_EOL;
-  $output .= 'Сообщение: ' . $data['form']['message'] . PHP_EOL;
-  $output .= 'Телефон: ' . isset($data['form']['phone']) ? $data['form']['phone'] : 'не указан' . PHP_EOL;
   $output .= 'Мессенджер: ' . $data['form']['messenger'] . PHP_EOL;
-  $output .= 'Аудитория: ' . $data['form']['age'] . PHP_EOL;
-  $output .= 'Пол: ' . $data['form']['gender'] . PHP_EOL;
   $output .= 'Услуга: ' . $data['form']['service'] . PHP_EOL;
+  $output .= 'Брендбук и фирменный стиль: ' . $data['form']['brand'] . PHP_EOL;
+  $output .= 'Телефон: ' . isset($data['form']['phone']) ? $data['form']['phone'] : 'не указан' . PHP_EOL;
   if (count($attachs)) {
     $output .= 'Файлы:' . PHP_EOL;
     foreach ($attachs as $attach) {

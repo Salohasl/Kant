@@ -18,21 +18,14 @@
                 <hr>
                 %message%
                 <hr>
-                %message%
-                <hr>
-                %message%
-                <hr>
-                %age%
-                <hr>
-                Email пользователя: <b>%email%</b>
-                <br>
-                Телефон: <b>%phone%</b>
                 <br>
                 Мессенджер: <b>%messenger%</b>
                 <br>
-                Пол: <b>%gender%</b>
-                <br>
                 Услуга: <b>%service%</b>
+                <br>
+                Брендбук и фирменный стиль: <b>%brand%</b>
+                <br>
+                Телефон: <b>%phone%</b>
                 <br>
                 Дата отправки: <b>%date%</b>
                 <br>
@@ -44,7 +37,7 @@
             </tr>
             <tr>
               <td bgcolor="#fff " style="padding: 20px 15px; color: #777; font-size: 14px;">
-                <p>&copy; 2022 Мой сайт.</p>
+                <p>&copy; 2024 kant-design.</p>
               </td>
             </tr>
           </tbody>

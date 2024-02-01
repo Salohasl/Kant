@@ -64,6 +64,7 @@ body {
 }
 
 header {
+  border-top: 4px solid #F7F6F1;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -73,11 +74,34 @@ header {
   z-index: 100;
   top: 0;
   background-color: #282828;
-  transition: 1s;
+  transition: 0.1s;
+}
+header .header_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-figur {
+  border-bottom: 70px solid #F7F6F1;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 25vw;
+  transition: 0.1s;
+  margin-left: 1%;
+}
+header .header-figur.colorFigure {
+  transition: 0.5s;
+  border-bottom: 70px solid rgba(40, 40, 40, 0.1);
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 25vw;
 }
 header.color {
   background-color: rgba(40, 40, 40, 0.5);
-  transition: 1s;
+  transition: 0.1s;
 }
 header .navig {
   display: flex;
@@ -90,24 +114,20 @@ header button {
   color: #282828;
   border: none;
   box-shadow: 2px 2px 10px black;
-  width: 176px;
-  height: 52px;
+  padding: 10px;
   font-size: 23px;
   transition: 0.5s;
   cursor: pointer;
 }
 header button:hover {
   transition: 0.5s;
-  background-color: #FFFFFF;
-}
-
-.active {
-  border-bottom: 2px solid #FFB400;
+  background-color: #F7F6F1;
 }
 
 .logo {
   margin-top: 5px;
   margin-left: 20px;
+  width: 60px;
 }
 
 .header-nav__link {
@@ -131,7 +151,7 @@ nav ul a {
 }
 nav a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #F7F6F1;
   margin-right: 40px;
   font-size: 23px;
   transition: 1s;
@@ -143,20 +163,26 @@ nav a:hover {
 }
 
 .container {
-  background-image: url(/fon/polar.png);
+  background-image: url(/fon/fonProm.png);
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
 }
 
-main {
-  margin-top: 10%;
+.header-fon {
+  background-image: url(/fon/Vector\ 48.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  margin-top: -10%;
+  height: 60vh;
 }
+
 main h2 {
   color: #282828;
   font-size: calc(30px + 1.171875vw);
   font-weight: 200;
   margin-left: 50px;
+  margin-top: -11%;
 }
 main .polyarn {
   margin-top: 15%;
@@ -172,7 +198,7 @@ main .polyarn .polyarn-block img {
   width: 40%;
 }
 main .polyarn .polyarn-block .polyarn-block__text {
-  color: #FFFFFF;
+  color: #F7F6F1;
 }
 main .polyarn .polyarn-block .polyarn-block__text p {
   font-weight: 200;
@@ -192,7 +218,7 @@ main .cleonOn .cleonOn-block img {
   width: 40%;
 }
 main .cleonOn .cleonOn-block .cleonOn-block__text {
-  color: #FFFFFF;
+  color: #F7F6F1;
   margin-top: -100px;
 }
 main .cleonOn .cleonOn-block .cleonOn-block__text p {
@@ -214,7 +240,7 @@ main .specTech .specTech-block img {
   width: 40%;
 }
 main .specTech .specTech-block .specTech-block__text {
-  color: #FFFFFF;
+  color: #F7F6F1;
 }
 main .specTech .specTech-block .specTech-block__text p {
   font-weight: 200;
@@ -223,27 +249,69 @@ main .specTech .specTech-block .specTech-block__text p {
 }
 
 footer {
-  margin-top: 200px;
-  height: 120px;
+  background: #282828;
+  background: linear-gradient(2.7deg, #282828 68%, rgba(0, 164, 255, 0) 80%);
+  margin-top: 5%;
+  border-bottom: 4px solid #F7F6F1;
 }
 footer .footer-block {
+  margin-top: 2%;
+  background-image: url(/fon/fon-footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 25vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 1%;
+}
+footer .footer-block .back {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  margin-bottom: 2%;
+  margin-left: 5%;
+}
+footer .footer-block .back a {
+  text-decoration: none;
+}
+footer .footer-block .back p {
+  color: #F7F6F1;
+  font-size: 22px;
+}
+footer .footer-block .back .border {
+  margin-left: 15px;
+  border-top: 4px solid #F7F6F1;
+  border-left: 4px solid #F7F6F1;
+  height: 20px;
+  width: 20px;
+  transform: rotate(-45deg);
+  cursor: pointer;
+  transition: 0.5s;
+}
+footer .footer-block .back:hover {
+  border-bottom: 2px solid #FFB400;
+}
+footer .footer-block .back:hover .border {
+  margin-left: 0px;
 }
 footer .footer-block button {
-  border: none;
+  margin-left: -20%;
   border-radius: 10px;
   background-color: #FFB400;
   color: #282828;
-  padding: 20px;
+  border: none;
+  box-shadow: 2px 2px 10px black;
+  padding: 10px;
   font-size: 23px;
-  box-shadow: 2px 2px 15px black;
+  transition: 0.5s;
   cursor: pointer;
-  transition: 1s;
 }
 footer .footer-block button:hover {
-  background-color: #FFFFFF;
+  transition: 0.5s;
+  background-color: #F7F6F1;
 }/*# sourceMappingURL=style.css.map */

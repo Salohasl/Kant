@@ -20,7 +20,9 @@ body {
 }
 
 .active {
-  border-bottom: 1px solid #FFB400;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #FFB400;
+          text-decoration-color: #FFB400;
 }
 
 .menuBtn.active span:nth-of-type(1) {
@@ -68,6 +70,7 @@ body {
 }
 
 header {
+  border-top: 4px solid #F7F6F1;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -77,11 +80,34 @@ header {
   z-index: 100;
   top: 0;
   background-color: #282828;
-  transition: 1s;
+  transition: 0.2s;
+}
+header .header_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-figur {
+  border-bottom: 70px solid #F7F6F1;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 25vw;
+  transition: 0.2s;
+  margin-left: 5%;
+}
+header .header-figur.colorFigure {
+  transition: 0.5s;
+  border-bottom: 70px solid rgba(40, 40, 40, 0.1);
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 25vw;
 }
 header.color {
   background-color: rgba(40, 40, 40, 0.5);
-  transition: 1s;
+  transition: 0.2s;
 }
 header .navig {
   display: flex;
@@ -94,15 +120,14 @@ header button {
   color: #282828;
   border: none;
   box-shadow: 2px 2px 10px black;
-  width: 176px;
-  height: 52px;
+  padding: 10px;
   font-size: 23px;
   transition: 0.5s;
   cursor: pointer;
 }
 header button:hover {
   transition: 0.5s;
-  background-color: #FFFFFF;
+  background-color: #F7F6F1;
 }
 
 .header-nav__link {
@@ -112,6 +137,7 @@ header button:hover {
 .logo {
   margin-top: 5px;
   margin-left: 20px;
+  width: 60px;
 }
 
 nav {
@@ -131,7 +157,7 @@ nav ul a {
 }
 nav a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #F7F6F1;
   margin-right: 40px;
   font-size: 23px;
   transition: 1s;
@@ -139,27 +165,58 @@ nav a {
   border-color: #FFB400;
 }
 nav a:hover {
-  border-bottom: 1px solid #FFB400;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #FFB400;
+          text-decoration-color: #FFB400;
 }
 
-main .citata {
-  margin-top: 20%;
-  margin-left: 10%;
+main .table {
+  margin-top: -5%;
+  background-image: url(/fon/fon_header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  max-height: 900px;
 }
-main .citata h2 {
+main .table-content1 {
+  padding-top: 15%;
+  color: #F7F6F1;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+}
+main .table-content1 .table-content__text {
   color: #282828;
-  font-size: calc(30px + 1.171875vw);
-  font-weight: 200;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+main .table-content1 .table-content__text h2 {
+  font-size: calc(20px + 1.171875vw);
+}
+main .table-content1 .table-content__block .table-content__block-img img {
+  width: 600px;
+}
+main .table-footer {
+  margin-top: -5%;
+  background-image: url(/fon/fon-kant_header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 20%;
 }
 main .wrapper {
-  margin-top: 20%;
+  margin-top: 1%;
 }
 main .left {
   margin-top: 15px;
   width: 60%;
 }
 main .left .left-block {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #F7F6F1;
   border-left: none;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -173,7 +230,7 @@ main .left .left-block .left-block__text {
   justify-content: space-around;
 }
 main .left .left-block .left-block__text p {
-  color: #FFFFFF;
+  color: #F7F6F1;
   width: 80%;
   font-weight: 200;
   font-size: calc(20px + 0.390625vw);
@@ -183,7 +240,7 @@ main .rigth {
   margin-left: 40%;
 }
 main .rigth .rigth-block {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #F7F6F1;
   border-right: none;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
@@ -197,72 +254,56 @@ main .rigth .rigth-block .rigth-block__text {
   justify-content: space-around;
 }
 main .rigth .rigth-block .rigth-block__text p {
-  color: #FFFFFF;
+  color: #F7F6F1;
   width: 80%;
   font-weight: 200;
   font-size: calc(20px + 0.390625vw);
 }
 
-.block-line {
-  background-image: url(/img/phil.png);
-  background-position: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 10%;
-}
-.block-line .block-line_text h2 {
-  font-size: calc(25px + 1.171875vw);
-  text-align: center;
-  font-weight: 200;
-  color: #282828;
+.media-block {
+  display: none;
 }
 
-footer {
-  margin-top: 0%;
+.footer1 {
+  border-bottom: 4px solid #F7F6F1;
+  margin-top: 2%;
   background-color: #282828;
+  background-image: url(/fon/footer_phil.png);
+  background-color: rgba(40, 40, 40, 0.7);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 25vh;
 }
-footer .footer-block {
+.footer1 .footer-block {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: 5%;
 }
-footer .footer-block button {
-  border: none;
+.footer1 .footer-block .footer-block__link {
+  margin-left: 4%;
+}
+.footer1 .footer-block h2 {
+  color: #282828;
+  font-weight: 200;
+  font-size: calc(20px + 0.78125vw);
+}
+.footer1 .footer-block button {
+  margin-top: 27px;
+  margin-left: -20%;
   border-radius: 10px;
   background-color: #FFB400;
   color: #282828;
-  padding: 15px;
+  border: none;
+  box-shadow: 2px 2px 10px black;
+  padding: 10px;
   font-size: 23px;
-  box-shadow: 2px 2px 15px black;
+  transition: 0.5s;
   cursor: pointer;
-  transition: 1s;
 }
-footer .footer-block button:hover {
-  background-color: #FFFFFF;
-}
-footer .footer-block__link {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-footer .footer-block__link a {
-  text-decoration: none;
-  color: #FFFFFF;
-  font-size: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-footer .footer-block__link a:hover {
-  text-decoration: underline;
-  -webkit-text-decoration-color: #FFB400;
-          text-decoration-color: #FFB400;
-}
-footer .footer-block__link a img {
-  margin-right: 10px;
+.footer1 .footer-block button:hover {
+  transition: 0.5s;
+  background-color: #F7F6F1;
 }/*# sourceMappingURL=philos.css.map */

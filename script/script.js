@@ -1,3 +1,14 @@
+/*Увеличение и уменьшение картинок */
+function hoverImgWork(){
+    const clickImg = document.querySelectorAll('.clickImg');
+    clickImg.forEach(el=>{
+        el.addEventListener('click', ()=>{
+            el.classList.toggle('hover');
+        })
+    })
+}hoverImgWork();
+
+
 function upFunc(){
     const blockContent = document.querySelector('.content');
     const btn = document.querySelector('.upDisplay');

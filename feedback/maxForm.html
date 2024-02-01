@@ -11,278 +11,192 @@
 <meta name="robots" content="index, follow" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link rel="shortcut icon" href="">
+<link rel="icon" href="/icon/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/style/normalize.css">
 <link rel="stylesheet" href="css/form-processing.css">
-<link rel="stylesheet" href="/style/media.css">
+<link rel="stylesheet" href="/feedback/css/mediaForm.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
 </head>
 <header>
-    <nav>
-        <a class="logo" href="/index.html"><img src="/icon/logo.svg"></a>
-        <h2>Расширенный бриф</h2>
-        <a href="tel:+79114933303">+7(911)493-33-03</a>
-    </nav>
+  <div class="header_left">
+    <a class="logo" href="/index.html"><img src="/icon/logo.svg"></a>
+    <div class="header-figur"></div>
+  </div>
+  <div class="navig">
+    <h2>Бриф на разработку</h2>
+  </div>
 </header>
 <body>
-
+  <div class="header-fon"></div>
   <div class="container">
         
     <div class="form-container form__wrapper">
       <!-- Форма обратной связи -->
-      <form id="feedback-form" action="/feedback/form-processing.php" enctype="multipart/form-data" novalidate>
-        <div class="content">
-            <h1>Расскажите о компании и целевой аудитории</h1>
+      <form id="feedback-form" action="/feedback/form-processing.php" enctype="multipart/form-data" method="post" novalidate>
+            <h1>Расскажите о компании</h1>
             <div class="form-row">
               <!-- Имя пользователя -->
               <div class="form-group">
                   <label for="name" class="control-label">ФИО</label>
-                  <input id="name" type="text" name="name" class="form-control style_input" value="" placeholder="Напишите ваше имя" minlength="2"
+                  <input id="name" type="text" name="name" class="form-control style_input" value="" placeholder="Обязательное поле" minlength="2"
                   maxlength="30" required="required">
                   <div class="invalid-feedback"></div>
               </div>
               
+            </div>
               <!-- Телефон -->
               <div class="form-group">
-                <label for="phone" class="control-label">Напишите свой телефон для связи</label>
+                <label for="phone" class="control-label">Номер телефона для связи</label>
                 <div class="input-group">
-                <input id="phone" type="tel" name="phone" class="form-control style_input" placeholder="Напишите ответ" value="" pattern="^(?[0-9]{3})?(s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$" required="required">
+                <input id="phone" type="tel" name="phone" class="form-control style_input phone_mask" placeholder="Обязательное поле" value="" required="required" autocomplete="off">
                 <div class="invalid-feedback"></div>
                 </div>
               </div>
-            </div>
+            
               <!---Кнопки Выборов-->
               <label>Выберите предпочитаемый мессенджер</label>
               <div class="btn">
                   <div class="form-group">
-                      <input id="messenger" type="text" name="messenger" class="form-control style_btn" value="WhatSapp" readonly>
+                      <input id="messengerClick" type="button"  class="form-control style_btn" value="WhatSapp">
                       <div class="invalid-feedback"></div>
                   </div>
                   <div class="form-group">
-                      <input id="messenger" type="text" name="messenger" class="form-control style_btn" value="Viber" readonly>
+                      <input id="messengerClick" type="button"  class="form-control style_btn" value="Viber">
                       <div class="invalid-feedback"></div>
                   </div>
                   <div class="form-group">
-                      <input id="messenger" type="text" name="messenger" class="form-control style_btn" value="Telegram" readonly>
+                      <input id="messengerClick" type="button"  class="form-control style_btn" value="Telegram">
                       <div class="invalid-feedback"></div>
+                  </div>
+                  <!-- Вывод мессенджера в форму -->
+                  <div class="form-group" style="display: none;">
+                    <input id="messenger" type="text" name="messenger" class="form-control style_input" value=""  minlength="2"
+                      maxlength="50">
+                    <div class="invalid-feedback"></div>
                   </div>
               </div>
     
             <!-- Сообщение пользователя -->
             <div class="form-group">
-              <label for="message" class="control-label">Расскажите о продукте или услуге</label>
-              <textarea id="message" name="message" class="form-control" rows="3"
-                  placeholder="Подробно" minlength="2" maxlength="500"></textarea>
+              <label for="message" class="control-label">Дополнительные сведения о продукте или услуге</label>
+              <input id="message" name="message" class="form-control style_input" rows="1"
+                  placeholder="Дополнительное поле" minlength="0" maxlength="500"></textarea>
               <div class="invalid-feedback"></div>
             </div>
 
-            <div class="form-group">
-                <label for="message" class="control-label">Конкурентные преимущества вашего продукта</label>
-                <textarea id="message" name="message" class="form-control" rows="3"
-                placeholder="Напишите ответ" minlength="2" maxlength="500"></textarea>
-                <div class="invalid-feedback"></div>
-            </div>
-
-         <!--- <div class="form-group">
-                <label for="message" class="control-label">Дополнительная информация (пожелания)</label>
-                <textarea id="message" name="message" class="form-control" rows="3"
-                placeholder="Напишите ответ" minlength="2" maxlength="500"></textarea>
-                <div class="invalid-feedback"></div>
-            </div>-->  
             
-            <!---Кнопки Выборов возраста-->
-            <h1 class="audit">Целевая аудитория</h1>
-            <label>Возраст</label>
-            <div class="btn">
-                <div class="form-group">
-                    <input id="age" type="text" name="age" class="form-control style_btn" value="до 18" readonly>         
-                    <div class="invalid-feedback"></div>
-                  </div>
-                <div class="form-group">
-                    <input id="age" type="text" name="age" class="form-control style_btn" value="18-25" readonly>             
-                    <div class="invalid-feedback"></div>
-                  </div>
-                <div class="form-group">
-                    <input id="age" type="text" name="age" class="form-control style_btn" value="25-40" readonly>     
-                    <div class="invalid-feedback"></div>
-                  </div>
-                <div class="form-group">
-                  <input id="age" type="text" name="age" class="form-control style_btn" value="40 и старше" readonly>     
-                  <div class="invalid-feedback"></div>
-                </div>
-            </div>
-            <label>Пол</label>
-            <div class="btn">
-              <div class="form-group">
-                  <input id="gender" type="text" name="gender" class="form-control style_btn" value="Мужчина" readonly>     
-                  <div class="invalid-feedback"></div>
-                </div>
-              <div class="form-group">
-                <input id="gender" type="text" name="gender" class="form-control style_btn" value="Женщина" readonly>     
-                <div class="invalid-feedback"></div>
-              </div>
-            </div>
           <h1 class="audit">Какая услуга требуется?</h1>
-          <div class="btn">
-            <div class="form-group">
-                <input id="service" type="text" name="service" class="form-control style_btn" value="Создание сайта" readonly>         
-                <div class="invalid-feedback"></div>
-              </div>
-            <div class="form-group">
-                <input id="service" type="text" name="service" class="form-control style_btn" value="Создание логотипа" readonly>             
-                <div class="invalid-feedback"></div>
-              </div>
-            <div class="form-group">
-                <input id="service" type="text" name="service" class="form-control style_btn" value="Фирменный стиль" readonly>     
-                <div class="invalid-feedback"></div>
-            <div class="invalid-feedback"></div>  </div>
+            <div class="btn">
               <div class="form-group">
-                <input id="service" type="text" name="service" class="form-control style_btn" value="Носители (визитки)" readonly>     
-                <div class="invalid-feedback"></div>
-              </div>
-            <div class="form-group">
-              <input id="service" type="text" name="service" class="form-control style_btn" value="landing page" readonly>         
-              <div class="invalid-feedback"></div>
-            </div>
-            <div class="form-group">
-                <input id="service" type="text" name="service" class="form-control style_btn" value="Рекламные материалы" readonly>             
-                <div class="invalid-feedback"></div>
-              </div>
-            <div class="form-group">
-                <input id="service" type="text" name="service" class="form-control style_btn" value="Моб. приложение" readonly>     
-                <div class="invalid-feedback"></div>
-              </div>
-            <div class="form-group">
-              <input id="service" type="text" name="service" class="form-control style_btn" value="Другое">     
-              <div class="invalid-feedback"></div>
-            </div>
-        </div>
-
-          <div class="block_form">
-            
-            <div class="left">
-              <label>Есть ли брендбук и фирменный стиль</label>
-              <div class="left__block">
+                  <input id="serviceClick" type="button"  class="form-control style_btn" value="Создание сайта" >         
+                  <div class="invalid-feedback"></div>
+                </div>
+              <div class="form-group">
+                  <input id="serviceClick" type="button"  class="form-control style_btn" value="Создание логотипа">             
+                  <div class="invalid-feedback"></div>
+                </div>
+              <div class="form-group">
+                  <input id="serviceClick" type="button"  class="form-control style_btn" value="Фирменный стиль">     
+                  <div class="invalid-feedback"></div>
+              <div class="invalid-feedback"></div>  </div>
                 <div class="form-group">
-                  <input id="messenger" type="text" name="messenger" class="form-control style_btn" value="Да" readonly>     
+                  <input id="serviceClick" type="button"  class="form-control style_btn" value="Носители">     
+                  <div class="invalid-feedback"></div>
+                </div>
+              <div class="form-group">
+                  <input id="serviceClick" type="button"  class="form-control style_btn" value="Рекламные материалы" >             
+                  <div class="invalid-feedback"></div>
+                </div>
+              <div class="form-group">
+                  <input id="serviceClick" type="button" class="form-control style_btn" value="Моб. приложение" >     
                   <div class="invalid-feedback"></div>
                 </div>
               </div>
-              <div class="form-group">
-                <input id="messenger" type="text" name="messenger" class="form-control style_btn" value="Нет" readonly>     
-                <div class="invalid-feedback"></div>
-              </div>
+            <div class="form-group">
+              <input id="serviceClick" type="text"  class="form-control clearValue style_input-btn" value="Другое">     
+              <div class="invalid-feedback"></div>
             </div>
+            <!-- Вывод проекта в форму -->
+            <div class="form-group" style="display: none;">
+              <input id="service" type="text" name="service" class="form-control style_input" value=""  minlength="2"
+                maxlength="50">
+              <div class="invalid-feedback"></div>
+            </div>
+
             
-            <div class="rigth">
-              <label>Загрузите материал который есть</label>
+              <label>Есть ли брендбук и фирменный стиль</label>
+              <div class="brand">
+                <div class="form-group">
+                  <input id="brandClick" type="button"  class="form-control style_brand1" value="Да">     
+                  <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group">
+                  <input id="brandClick" type="button"  class="form-control style_brand2" value="Нет">     
+                  <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group" style="display: none;">
+                  <input id="brand" type="text" name="brand" class="form-control style_input" value=""  minlength="2"
+                    maxlength="50">
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+
               <!-- Файлы, для прикрепления к форме -->
               <div class="form-group form-attach" data-count="5">
-              
+                <label>Загрузка материалов</label>
                 <div class="form-attach__wrapper">
                   <input type="file" name="attach[]" multiple>
                   <div class="form-attach__description">
-                    <div style="color: black;">Загрузить</div>
+                    <div style="color: black;">Загрузка <img src="/icon/download.png" width="30px" alt="download" style="margin-left: 15px;"></div>
                   
                   </div>
                   <div class="form-attach__items"></div>
                 </div>
                 <div class="invalid-feedback"></div>
               </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="message" class="control-label">Что вы хотите реализовать в проекте</label>
-            <textarea id="message" name="message" class="form-control" rows="3"
-            placeholder="Напишите ответ" minlength="2" maxlength="500"></textarea>
-            <div class="invalid-feedback"></div>
-          </div>
-
-
-          <label style="margin-top: 5%;">Стилистика которая вам нравится</label>
-            <div class="btn">    
-                <div class="form-group">
-                    <input id="service" type="text" name="service" class="form-control style_btn" value="Минимализм" readonly>         
-                    <div class="invalid-feedback"></div>
-                  </div>
-                <div class="form-group">
-                    <input id="service" type="text" name="service" class="form-control style_btn" value="Материал дизайн" readonly>             
-                    <div class="invalid-feedback"></div>
-                  </div>
-                <div class="form-group">
-                    <input id="service" type="text" name="service" class="form-control style_btn" value="Журнальный" readonly>     
-                    <div class="invalid-feedback"></div>
-                  </div>
-                  <div class="form-group">
-                    <input id="service" type="text" name="service" class="form-control style_btn" value="Гранж" readonly>     
-                    <div class="invalid-feedback"></div>
-                  </div>
-                  <div class="form-group">
-                    <input id="service" type="text" name="service" class="form-control style_btn" value="Ретро" readonly>         
-                    <div class="invalid-feedback"></div>
-                  </div>
-                  <div class="form-group">
-                      <input id="service" type="text" name="service" class="form-control style_btn" value="Другое">             
-                      <div class="invalid-feedback"></div>
-                    </div>               
-            </div>
-
-            <!-- Сообщение пользователя -->
-            <div class="form-group" style="margin-top: 5%;">
-              <label for="message" class="control-label">Какие цвета противоречат концепции вашей компании</label>
-              <textarea id="message" name="message" class="form-control" rows="3"
-                  placeholder="Подробно" minlength="2" maxlength="500"></textarea>
-              <div class="invalid-feedback"></div>
-            </div>
-
-            <div class="form-group">
-                <label for="message" class="control-label">Желаемая цветовая палитра</label>
-                <textarea id="message" name="message" class="form-control" rows="3"
-                placeholder="Напишите ответ" minlength="2" maxlength="500"></textarea>
-                <div class="invalid-feedback"></div>
-            </div>
-
-           <div class="form-group">
-                <label for="message" class="control-label">Примеры работ, которые вам нравятся</label>
-                <textarea id="message" name="message" class="form-control" rows="3"
-                placeholder="Вставьте ссылки" minlength="2" maxlength="500"></textarea>
-                <div class="invalid-feedback"></div>
-            </div>
             <!-- Сообщение об ошибке -->
             <div class="form-error form-error_hide">Исправьте данные и отправьте форму ещё раз.</div>
         
         
-                <div class="btn_user">
-                    <!-- Кнопка для отправки формы на сервер -->
-                    <div class="form-submit">
-                        <button type="submit">Отправить</button>
-                    </div>
+            
+              <div class="block-forma__elemt">
+                <!-- Кнопка для отправки формы на сервер -->
+                <div class="form-submit">
+                  <button id="buttonForm" type="submit">Отправить</button>
+                </div>
 
-                    <!-- Пользовательское солашение -->
-                    <div class="form-group form-agree form-check">
-                        <input class="form-check-input" type="checkbox" name="agree" id="agree" required value="true">
-                        <label class="form-check-label" for="agree">Соглашение на обработку <a href="#">персональных данных</a></label>
-                        <div class="invalid-feedback"></div>
-                    </div>
-                </div>    
-        </div>
+                      <!-- Пользовательское солашение -->
+                <div class="form-group form-agree form-check style_sogl">
+                  <input class="form-check-input" type="checkbox" name="agree" id="agree" required value="true" checked>
+                  <label class="form-check-label" for="agree">Соглашение на обработку <br> <a href="/politica.html" target="_blank">персональных данных</a></label>
+                  <div class="invalid-feedback"></div>
+                </div>  
+              </div>
+           
       </form>
 
       <!-- Сообщение об успешной отправки формы -->
       <div class="form-success form-success_hide">
-        <div class="form-success__message">Форма успешно отправлена. Нажмите <button type="button"
-            class="form-success__btn">здесь</button>, если нужно отправить ещё одну форму.</div>
+        <div class="form-success__message">
+          <h2>Заявка успешно сформирована</h2>
+          <h2>Наш менеджер свяжется с вами в ближайшее время.</h2>
+          <button type="button" class="form-success__btn">Закрыть</button>
+        </div>
       </div>
     
     </div>
 </div>
-
+<footer>
+  <div class="block-footer"></div>
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.js" type="text/javascript"></script>
   <script src="/feedback/js/add.js"></script>
   <script src="/feedback/js/form-processing.js"></script>
   <script>
+    $(".phone_mask").mask("+7(999)999-99-99");
     /*
       attachMaxItems: 3,
       attachMaxFileSize: 128,
@@ -301,11 +215,22 @@
       const el = e.target.closest('.form-container').querySelector('form');
       const form = ItcSubmitForm.getOrCreateInstance(el);
       form.reset();
+      location. reload();
       e.target.closest('.form-container').querySelector('.form-success').classList.add('form-success_hide');
     });
 
+    const header = document.querySelector('header');
+    const headerFigur = document.querySelector('.header-figur');
+      window.addEventListener('scroll', ()=>{
+        if(window.pageYOffset >= 50){
+          header.classList.add('color');
+          headerFigur.classList.add('colorFigure');
+        }else{
+          header.classList.remove('color');
+          headerFigur.classList.remove('colorFigure');
+        }
+      })
   </script>
-
 </body>
 
 </html>

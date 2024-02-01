@@ -64,6 +64,7 @@ body {
 }
 
 header {
+  border-top: 4px solid #F7F6F1;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -74,6 +75,29 @@ header {
   top: 0;
   background-color: #282828;
   transition: 1s;
+}
+header .header_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-figur {
+  border-bottom: 70px solid #F7F6F1;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 25vw;
+  transition: 0.5s;
+  margin-left: 5%;
+}
+header .header-figur.colorFigure {
+  transition: 0.5s;
+  border-bottom: 70px solid rgba(40, 40, 40, 0.1);
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 25vw;
 }
 header.color {
   background-color: rgba(40, 40, 40, 0.5);
@@ -90,24 +114,20 @@ header button {
   color: #282828;
   border: none;
   box-shadow: 2px 2px 10px black;
-  width: 176px;
-  height: 52px;
+  padding: 10px;
   font-size: 23px;
   transition: 0.5s;
   cursor: pointer;
 }
 header button:hover {
   transition: 0.5s;
-  background-color: #FFFFFF;
-}
-
-.active {
-  border-bottom: 2px solid #FFB400;
+  background-color: #F7F6F1;
 }
 
 .logo {
   margin-top: 5px;
   margin-left: 20px;
+  width: 60px;
 }
 
 .header-nav__link {
@@ -131,7 +151,7 @@ nav ul a {
 }
 nav a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #F7F6F1;
   margin-right: 40px;
   font-size: 23px;
   transition: 1s;
@@ -143,20 +163,26 @@ nav a:hover {
 }
 
 .container {
-  background-image: url(/fon/fonSiteandMob.png);
+  background-image: url(/fon/fonProm.png);
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
 }
 
-main {
-  margin-top: 10%;
+.header-fon {
+  background-image: url(/fon/Vector\ 48.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  margin-top: -10%;
+  height: 60vh;
 }
+
 main h2 {
   color: #282828;
   font-size: calc(30px + 1.171875vw);
   font-weight: 200;
   margin-left: 50px;
+  margin-top: -11%;
 }
 main .polyarn {
   margin-top: 15%;
@@ -169,21 +195,16 @@ main .polyarn .polyarn-block {
   justify-content: space-around;
 }
 main .polyarn .polyarn-block img {
-  width: 100%;
-  height: 400px;
-  opacity: 0.3;
   cursor: pointer;
   transition: 1s;
 }
-main .polyarn .polyarn-block img:hover {
-  opacity: 1;
-}
 main .polyarn .polyarn-block .polyarn-block__text {
-  color: #FFFFFF;
+  color: #F7F6F1;
+  margin-top: 3%;
 }
 main .polyarn .polyarn-block .polyarn-block__text h2 {
   margin-left: 0px;
-  color: #FFFFFF;
+  color: #F7F6F1;
   font-size: calc(30px + 3.515625vw);
 }
 main .polyarn .polyarn-block .polyarn-block__text p {
@@ -202,28 +223,30 @@ main .cleonOn .cleonOn-block {
   justify-content: space-around;
 }
 main .cleonOn .cleonOn-block img {
-  width: 100%;
-  height: 400px;
-  opacity: 0.3;
   cursor: pointer;
   transition: 1s;
 }
-main .cleonOn .cleonOn-block img:hover {
-  opacity: 1;
-}
 main .cleonOn .cleonOn-block .cleonOn-block__text {
-  color: #FFFFFF;
-  margin-top: -100px;
+  color: #F7F6F1;
+  margin-top: 3%;
 }
 main .cleonOn .cleonOn-block .cleonOn-block__text h2 {
   margin-left: 0px;
-  color: #FFFFFF;
+  color: #F7F6F1;
   font-size: calc(30px + 3.515625vw);
 }
 main .cleonOn .cleonOn-block .cleonOn-block__text p {
   font-weight: 200;
   margin-top: 20px;
   font-size: calc(20px + 1.171875vw);
+}
+main .content {
+  display: none;
+}
+
+.viking{
+  width: 400px;
+  height: 300px;
 }
 main .zelek {
   margin-top: 10%;
@@ -236,21 +259,16 @@ main .zelek .zelek-block {
   justify-content: space-around;
 }
 main .zelek .zelek-block img {
-  width: 100%;
-  height: 400px;
-  opacity: 0.3;
   cursor: pointer;
   transition: 1s;
 }
-main .zelek .zelek-block img:hover {
-  opacity: 1;
-}
 main .zelek .zelek-block .zelek-block__text {
-  color: #FFFFFF;
+  color: #F7F6F1;
+  margin-top: 3%;
 }
 main .zelek .zelek-block .zelek-block__text h2 {
   margin-left: 0px;
-  color: #FFFFFF;
+  color: #F7F6F1;
   font-size: calc(30px + 3.515625vw);
 }
 main .zelek .zelek-block .zelek-block__text p {
@@ -260,52 +278,93 @@ main .zelek .zelek-block .zelek-block__text p {
 }
 
 footer {
-  margin-top: 10%;
-  background-color: #282828;
+  background: #282828;
+  background: linear-gradient(2.7deg, #282828 68%, rgba(0, 164, 255, 0) 80%);
+  margin-top: 5%;
+  border-bottom: 4px solid #F7F6F1;
 }
 footer .footer-block {
+  margin-top: 2%;
+  background-image: url(/fon/fon-footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 25vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 1%;
 }
 footer .footer-block button {
-  border: none;
+  margin-left: -20%;
   border-radius: 10px;
   background-color: #FFB400;
   color: #282828;
-  padding: 20px;
+  border: none;
+  box-shadow: 2px 2px 10px black;
+  padding: 10px;
   font-size: 23px;
-  box-shadow: 2px 2px 15px black;
+  transition: 0.5s;
   cursor: pointer;
-  transition: 1s;
 }
 footer .footer-block button:hover {
-  background-color: #FFFFFF;
+  transition: 0.5s;
+  background-color: #F7F6F1;
 }
-footer .footer-block__link {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-footer .footer-block__link a {
-  text-decoration: none;
-  color: #FFFFFF;
-  font-size: 25px;
-  margin-top: 15px;
+footer .upDisplay {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  cursor: pointer;
+  margin-bottom: 2%;
+  margin-left: 5%;
 }
-footer .footer-block__link a img {
-  margin-right: 10px;
+footer .upDisplay p {
+  color: #F7F6F1;
+  font-size: 22px;
 }
-footer .footer-block__link a:hover {
+footer .upDisplay .border {
+  margin-left: 15px;
+  border-bottom: 4px solid #F7F6F1;
+  border-right: 4px solid #F7F6F1;
+  height: 20px;
+  width: 20px;
+  transform: rotate(-45deg);
+  cursor: pointer;
+  transition: 0.5s;
+}
+footer .upDisplay:hover {
+  border-bottom: 2px solid #FFB400;
+}
+footer .upDisplay:hover .border {
+  margin-left: 20px;
+}
+
+.footer-block__link {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+.footer-block__link a {
+  text-decoration: none;
+  color: #F7F6F1;
+  font-size: 20px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.footer-block__link a:hover {
   text-decoration: underline;
   -webkit-text-decoration-color: #FFB400;
           text-decoration-color: #FFB400;
+}
+.footer-block__link a img {
+  margin-right: 10px;
 }/*# sourceMappingURL=style.css.map */

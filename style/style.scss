@@ -10,7 +10,7 @@
 
 $yellow: #FFB400;
 $dark: #282828;
-$white: #FFFFFF;
+$white: #F7F6F1;
 
 html {
     scroll-behavior: smooth;
@@ -68,6 +68,7 @@ body{
   }
 
 header{
+  border-top: 4px solid $white;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -77,10 +78,33 @@ header{
   z-index: 100;
   top: 0;
   background-color: $dark;
-  transition: 1s;
+  transition: .1s;
+  .header_left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-figur{
+    border-bottom: 70px solid $white;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 0;
+    width:25vw;
+    transition: .1s;
+    margin-left: 5%;
+    &.colorFigure{
+      transition:.1s;
+      border-bottom: 70px solid rgb(40,40,40, 0.1);
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      height: 0;
+      width:25vw;
+    }
+  }
   &.color{
     background-color: rgb(40,40,40, 0.5);
-    transition: 1s;
+    transition: .5s;
   }
   .navig{
     display: flex;
@@ -93,8 +117,7 @@ header{
     color: $dark;
     border: none;
     box-shadow: 2px 2px 10px black;
-    width: 176px;
-    height: 52px;
+    padding: 10px;
     font-size: 23px;
     transition: .5s;
     cursor: pointer;
@@ -110,6 +133,7 @@ header{
 .logo{
   margin-top: 5px;
   margin-left: 20px;
+  width: 60px;
 }
 nav{
   display: flex;
@@ -140,95 +164,114 @@ nav{
 }
 
 .container{
-  background-image: url(/fon/fonHome.png);
+  background-image: url(/fon/fonProm.png);
   background-repeat: no-repeat;
   background-size:cover;
 }
-.line{
-  background-image: url(/fon/Group\ 81.png);
-  background-repeat: no-repeat;
-  background-size:cover;
-}
+
 main{
+  h2{
+    font-weight: 200;
+  }
   color: $white;
   background-image: url(/fon/Group\ 81.png);
   background-repeat: no-repeat;
   background-size:cover;
-  h2{
-    font-size: calc(30px + 15 * (100vw / 1280));
-    font-weight: 200;
-  }
   .table{
-    background-color: white;
     margin-top: -5%;
-    padding: 8%;
-    width: 100%;
-    height: 120vh;
-    transform: skewY(-7deg);
-    
+    background-image: url(/fon/fon_header.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    max-height: 800px;
   }
- 
+  .table-content__kant-text{
+    width: 100%;
+    margin-left: -143%;
+    z-index: 1;
+    img{
+      width: 140%;
+      
+    }
+  }
   .table-content{
-    margin-top: 5%;
+    padding-top: 18%;
     color: $white;
     display: flex;
     flex-direction: row-reverse;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: center;
-    transform: skewY(7deg);
-    img{
-     margin-right: -20%;
-     margin-bottom: -15.5%;
-     width: 70%;
+    .table-content__text{
+      color: $dark;
+      font-weight: bold;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      padding-left: 50%;
+      h2{
+        font-size: calc(20px + 15 * (100vw / 1280));
+        margin-bottom: 18%;
+      } 
+      
     }
     .table-content__block{
-      width: 62%;
-      height: 70vh;
-      background-color: $dark;
-      margin-left: -20%;
-      margin-right: -8%;
-      padding-top: 5%;
-      padding-left: 20%;
+      .table-content__block-img{
+        position: absolute;
+        background-color: $dark;
+        width: 40%;
+        margin-left: 8%;
+        img{
+          width: 60%;
+          margin-top: -16%;
+          object-fit: cover;
+        }
+      }
     }
-    p{
-      font-size: calc(20px + 5 * (100vw / 1280));
-      font-weight: 100;
-      line-height: 30px;
-      margin-top: 50px;
-    }
+  }
+  .table-footer{
+    margin-top: -5%;
+  /*  background-image: url(/fon/fon-kant_header.png);
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    object-fit: cover;
   }
   .dev-site{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    margin-top: -12%;
     
     a{
       text-decoration: none;
       color: $white;
+      z-index: 3;
     }
     .dev-site-block{
+      margin-right: 10%;
       .dev-site-block__anim{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: row;
-        position: absolute;
+        z-index: 3;
         h2{
           font-size: calc(30px + 25 * (100vw / 1280));
-        }
-        &:hover{
-          border-bottom: 3px solid $yellow;
-          .dev-site__border{
-            margin-left: 45%;
+          width: 110%;
+          height: 70px;
+          &:hover{
+            border-bottom: 3px solid $yellow;
           }
         }
       }
         .dev-site__border{
           position: absolute;
-          margin-top: 30%;
-          margin-left: 35%;
+          margin-top: 1%;
+          margin-left: 31%;
           border-bottom: 4px solid $white;
           border-right: 4px solid $white;
           height: 20px;
@@ -239,9 +282,9 @@ main{
         }
     }
     img{
-      margin-left: 20%;
-      width: 35vw;
+      width: 45vw;
       object-fit: cover;
+      z-index: 3;
     }
   }
 
@@ -250,37 +293,36 @@ main{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 80%;
     padding-top: 10%;
-
+    z-index: 3;
     a{
       text-decoration: none;
       color: $white;
+      z-index: 3;
     }
     .dev-style-block{
-      margin-left: -30%;
+      margin-left: 5%;
       .dev-style-block__anim{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: row;
-        position: absolute;
+        z-index: 3;
         h2{
           font-size: calc(25px + 20 * (100vw / 1280));
-        }
-        &:hover{
-          border-bottom: 3px solid $yellow;
-          .dev-style__border{
-            margin-left: 120%;
+          width: 110%;
+          height: 108px;
+          &:hover{
+            border-bottom: 3px solid $yellow;
           }
         }
       }
         .dev-style__border{
           position: absolute;
-          margin-top: 18%;
-          margin-left: 110%;
+          margin-top: 5%;
+          margin-left: 30%;
           border-bottom: 4px solid $white;
           border-right: 4px solid $white;
           height: 20px;
@@ -291,18 +333,13 @@ main{
         }
     }
     .dev-style__img{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      width: 600px;
       a{
+        
+        z-index: 3;
         img{
-          margin-left: -30px;
-          margin-top: -30px;
+          width: 45vw;
           object-fit: cover;
-  
+          z-index: 3;
         }
       }
     }
@@ -313,37 +350,36 @@ main{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:center;
     align-items: center;
     padding-top: 100px;
-    
     a{
       text-decoration: none;
       color: $white;
+      z-index: 3;
     }
     .dev-advert-block{
-      margin-right: 200px;
-      margin-left: 100px;
+      margin-right: 10%;
       .dev-advert-block__anim{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: row;
-        position: absolute;
+        z-index: 3;
+        margin-right: -25%;
+        padding-bottom: 5px;
         h2{
-          font-size: calc(30px + 25 * (100vw / 1280));
-        }
-        &:hover{
-          border-bottom: 3px solid $yellow;
-          .dev-advert__border{
-            margin-left: 20%;
+          font-size: calc(30px + 15 * (100vw / 1280));
+          height: 110px;
+          &:hover{
+            border-bottom: 3px solid $yellow;
           }
         }
       }
         .dev-advert__border{
           position: absolute;
-          margin-top: 15%;
-          margin-left: 10%;
+          margin-top: 4.5%;
+          margin-left: 2%;
           border-bottom: 4px solid $white;
           border-right: 4px solid $white;
           height: 20px;
@@ -358,14 +394,12 @@ main{
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      width: 600px;
-      margin-left: 300px;
+      width: 35vw;
       a{
         img{
           object-fit: cover;
-          border: 3px solid $white;
-          border-radius: 15px;
           width: 60%;
+          z-index: 3;
         }
         .pena{
           margin-top: -200px;
@@ -379,31 +413,41 @@ main{
 
 }
 
-
+.media-block{
+  display: none;
+}
 
 footer{
-  background-image: url(/fon/fohHome-footer.png);
-  background-size: cover;
-  margin-top: 10%;
-  padding-top: 2%;
+  background: $dark;
+  background: linear-gradient(2.7deg, $dark 68%, rgba(0,164,255,0) 80%);
+  margin-top: 5%;
   .footer-block{
+    border-bottom: 4px solid $white;
+    margin-top: 2%;
+    background-image: url(/fon/fon-footer.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 1%;
     button{
-
-      border: none;
+      margin-top: 27px;
+      margin-left: -20%;
       border-radius: 10px;
-      background-color: $yellow;
+      background-color:  $yellow;
       color: $dark;
-      padding: 15px;
+      border: none;
+      box-shadow: 2px 2px 10px black;
+      padding: 10px;
       font-size: 23px;
-      box-shadow: 2px 2px 15px black;
+      transition: .5s;
       cursor: pointer;
-      transition: 1s;
       &:hover{
+        transition: .5s;
         background-color: $white;
       }
     }
@@ -413,11 +457,13 @@ footer{
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
+      margin-left: 4%;
+      
     a{
       text-decoration: none;
       color: $white;
       font-size: 20px;
-      margin-top: 15px;
+      margin-top: 5px;
       display: flex;
       flex-direction: row;
       align-items: center;
